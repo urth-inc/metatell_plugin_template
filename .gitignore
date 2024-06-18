@@ -1,7 +1,7 @@
 # This file is used to ignore files and directories in the project
 
 # ignore node_modules directory
-node_module
+node_modules
 
 # ignore dist directory
 dist
