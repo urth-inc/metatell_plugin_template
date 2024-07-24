@@ -9,10 +9,8 @@ module.exports = merge(webpackBaseConfig, {
       directory: path.join(__dirname, '../dist'),
     },
     port: 3004,
-    open: true,
     headers: {
       'Access-Control-Allow-Origin': '*'
     },
   },
 });
-
