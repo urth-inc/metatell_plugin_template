@@ -1,14 +1,11 @@
 import { FC } from 'react';
 
-export interface ButtonProps {
-  label: string;
-}
-
-const Button: FC<ButtonProps> = ({ label }) => {
+const Button: FC = () => {
   const onClick = () => {
     console.log("plugin button was clicked");
   }
-  return <button onClick={onClick}>{label}</button>;
+
+  return <button onClick={onClick}>🐙Remote Button🐙</button>;
 };
 
 export default Button;

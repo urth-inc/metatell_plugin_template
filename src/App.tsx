@@ -4,7 +4,7 @@ const App = () => {
   return (
     <div>
       <h1>app2 Website</h1>
-      <Button label="Label" />
+      <Button />
     </div>
   );
 };
