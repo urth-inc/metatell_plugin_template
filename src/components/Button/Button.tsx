@@ -1,7 +1,7 @@
 import React from "react";
 import * as styles from "./Button.module.scss";
 
-const Button: React.FC = () => {
+export const Button: React.FC = () => {
   const onClick = () => {
     console.log("crab button was clicked");
   };
@@ -12,5 +12,3 @@ const Button: React.FC = () => {
     </div>
   );
 };
-
-export default Button;
