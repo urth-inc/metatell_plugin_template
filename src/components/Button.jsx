@@ -2,10 +2,10 @@ import React from 'react';
 
 const Button = () => {
   const onClick = () => {
-    console.log("plugin button was clicked");
+    console.log("crab button was clicked");
   }
 
-  return <button onClick={onClick}>🐙Remote Button🐙</button>;
+  return <button onClick={onClick}>🦀Remote Button🦀</button>;
 };
 
 export default Button;
