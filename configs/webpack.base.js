@@ -1,4 +1,3 @@
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('@module-federation/enhanced').ModuleFederationPlugin;
@@ -6,12 +5,26 @@ const ModuleFederationPlugin = require('@module-federation/enhanced').ModuleFede
 const federationConfig = require('./federationConfig');
 
 module.exports = {
-  entry: "./src/index",
+  entry: path.resolve(__dirname, "../src/index"),
   output: {
     publicPath: 'auto',
   },
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@babel/preset-typescript'
+            ]
+          }
+        },
+        exclude: /node_modules/,
+      },
       {
         test: /\.m?js$/,
         type: 'javascript/auto',
