@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = () => {
+const Button: React.FC = () => {
   const onClick = () => {
     console.log("crab button was clicked");
   }

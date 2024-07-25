@@ -1,7 +1,7 @@
 import React from "react"
 import Button from './components/Button';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div>
       <h1>plugin Website</h1>
