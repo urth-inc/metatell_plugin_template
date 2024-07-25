@@ -1,28 +1,36 @@
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
-const { FederatedTypesPlugin } = require('@module-federation/typescript');
-const { ModuleFederationPlugin } = webpack.container;
+const ModuleFederationPlugin = require('@module-federation/enhanced').ModuleFederationPlugin;
+
 const federationConfig = require('./federationConfig');
 
 module.exports = {
-  entry: {
-    main: path.join(__dirname, '../src/index.ts'),
+  entry: "./src/index",
+  output: {
+    publicPath: 'auto',
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx|tsx|ts)$/,
-        loader: 'ts-loader',
+        test: /\.m?js$/,
+        type: 'javascript/auto',
+        resolve: {
+          fullySpecified: false,
+        },
+      },
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
         exclude: /node_modules/,
+        options: {
+          presets: ['@babel/preset-react'],
+        },
       },
     ],
   },
   plugins: [
     new ModuleFederationPlugin(federationConfig),
-    new FederatedTypesPlugin({
-      federationConfig,
-    }),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       title: 'plugin',
