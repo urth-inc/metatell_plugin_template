@@ -1,19 +1,20 @@
-const dependencies = require('../package.json').dependencies;
+const dependencies = require("../package.json").dependencies;
 
 module.exports = {
-  name: 'plugin',
-  filename: 'remoteEntry.js',
+  name: "plugin",
+  filename: "remoteEntry.js",
   exposes: {
-    './Button': './src/components/Button',
+    "./Button": "./src/components/Button",
+    "./CustomToolbarButton": "./src/components/CustomToolbarButton/index.ts",
   },
   shared: {
     react: {
       singleton: true,
-      requiredVersion: dependencies['react'],
+      requiredVersion: dependencies["react"],
     },
-    'react-dom': {
+    "react-dom": {
       singleton: true,
-      requiredVersion: dependencies['react-dom'],
+      requiredVersion: dependencies["react-dom"],
     },
   },
 };
