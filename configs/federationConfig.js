@@ -5,7 +5,7 @@ module.exports = {
   filename: "remoteEntry.js",
   exposes: {
     "./Button": "./src/components/Button",
-    "./CustomToolbarButton": "./src/components/CustomToolbarButton/index.ts",
+    "./CustomToolbarButton": "./src/components/CustomToolbarButton",
   },
   shared: {
     react: {
