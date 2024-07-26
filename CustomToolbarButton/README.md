@@ -2,7 +2,7 @@
 
 ## Description
 
-This template is used to create a custom toolbar button in metatell.
+This is a template for creating a custom toolbar button for metatell.
 
 ## Pre-requisites
 
@@ -50,6 +50,8 @@ Run the following command to build the project:
 npm run build
 ```
 
+You can find the built files in the `dist` directory.
+
 5. Publish the project
 
 You can publish the plugin from metatell-admin in future.
@@ -65,7 +67,7 @@ You can publish the plugin from metatell-admin in future.
 
 ### Styling
 
-You can use CSS Modules. The CSS Modules are scoped to the component and do not affect other components.
+You can use CSS Modules without any additional configuration.
 
 If you want to use different styling systems like styled-components, you can do so by installing the required packages.
 

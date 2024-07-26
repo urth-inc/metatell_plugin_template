@@ -3,14 +3,24 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin =
   require("@module-federation/enhanced").ModuleFederationPlugin;
 
-const federationConfig = require("./federationConfig");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const federationConfig = require("./configs/federationConfig");
 
 module.exports = {
-  entry: path.resolve(__dirname, "../src/index"),
+  entry: path.resolve(__dirname, "./src/index"),
   output: {
     publicPath: "auto",
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "./dist"),
+    },
+    port: 3004,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  },
+
   module: {
     rules: [
       {

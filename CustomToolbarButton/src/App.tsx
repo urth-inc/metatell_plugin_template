@@ -1,11 +1,14 @@
 import React from "react";
 import { CustomToolbarButton } from "./components/CustomToolbarButton";
 
+import * as styles from "./App.module.scss";
+
 const App: React.FC = () => {
   return (
-    <div>
-      <h1>plugin Website</h1>
-      <h2>Iframe Component</h2>
+    <div className={styles.appContainer}>
+      <h2 className={styles.appHeadingContainer}>
+        CustomToolbarButton Component
+      </h2>
       <CustomToolbarButton />
     </div>
   );

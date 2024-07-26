@@ -4,7 +4,6 @@ module.exports = {
   name: "plugin",
   filename: "remoteEntry.js",
   exposes: {
-    "./Button": "./src/components/Button",
     "./CustomToolbarButton": "./src/components/CustomToolbarButton",
   },
   shared: {

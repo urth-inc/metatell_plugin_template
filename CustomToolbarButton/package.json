@@ -1,10 +1,12 @@
 {
-  "name": "metatell-plugin-template",
+  "name": "custom-toolbar-button-template",
+  "description": "A template for creating custom toolbar buttons for metatell",
+  "version": "0.0.0",
   "scripts": {
-    "start": "webpack --watch --config configs/webpack.dev.js",
-    "build": "webpack --progress --config configs/webpack.dev.js",
-    "serve": "webpack serve --config configs/webpack.dev.js",
+    "start": "webpack --watch --mode development --config webpack.config.js",
+    "serve": "webpack serve --mode development --config webpack.config.js",
     "dev": "npm-run-all --parallel start serve",
+    "build": "webpack --progress --mode production --config webpack.config.js",
     "lint:tsc": "tsc --noEmit",
     "lint:prettier": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,scss}'",
     "lint-fix:prettier": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,scss}'"
@@ -25,17 +27,14 @@
     "prettier": "3.3.3",
     "sass": "^1.77.8",
     "sass-loader": "^15.0.0",
-    "style-loader": "^4.0.0",
     "typescript": "^5.5.4",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4",
-    "webpack-merge": "^5.10.0"
+    "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@module-federation/runtime": "^0.3.1",
     "classnames": "^2.5.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.8.1",
