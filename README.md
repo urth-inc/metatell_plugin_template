@@ -2,6 +2,8 @@
 
 This repository is to showcase examples of how to create plugins for metatell.
 
+All examples are written in TypeScript and React.
+
 ## How to use the plugin template
 
 1. Clone this repository
