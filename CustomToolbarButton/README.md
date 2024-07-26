@@ -8,7 +8,19 @@ This is a template for creating a custom toolbar button for metatell.
 
 - Node.js 20 (We recommend using volta to manage node versions)
 
-## How to Develop
+## npm scripts
+
+- `npm run dev`: Start the development server
+- `npm run build`: Build the project
+- `npm run lint`: Run all lint check
+- `npm run lint:tsc`: Run code check based on tsc
+- `npm run lint:prettier`: Run code check based on prettier
+- `npm run lint:eslint`: Run code check based on eslint
+- `npm run lint-fix`: Run all code fix
+- `npm run lint-fix:prettier`: Run code fix based on prettier
+- `npm run lint-fix:eslint`: Run code fix based on eslint
+
+## How to develop
 
 1. Install dependencies
 
