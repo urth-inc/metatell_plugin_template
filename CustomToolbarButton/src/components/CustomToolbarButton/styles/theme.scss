@@ -243,7 +243,9 @@ $active-color-pressed: var(--active-color-pressed);
 $chat-bubble-bg-color-sent: var(--chat-bubble-bg-color-sent);
 $chat-bubble-text-color-sent: var(--chat-bubble-text-color-sent);
 $chat-bubble-link-color-sent-hover: var(--chat-bubble-link-color-sent-hover);
-$chat-bubble-link-color-sent-pressed: var(--chat-bubble-link-color-sent-pressed);
+$chat-bubble-link-color-sent-pressed: var(
+  --chat-bubble-link-color-sent-pressed
+);
 $chat-bubble-bg-color-received: var(--chat-bubble-bg-color-received);
 
 $tip-text-color: var(--tip-text-color);

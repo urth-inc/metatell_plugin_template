@@ -1,7 +1,7 @@
-import classNames from "classnames"
-import PropTypes from "prop-types"
-import React, { forwardRef } from "react"
-import * as styles from "./ToolbarButton.scss"
+import classNames from "classnames";
+import PropTypes from "prop-types";
+import React, { forwardRef } from "react";
+import * as styles from "./ToolbarButton.scss";
 
 export const presets = [
   "basic",
@@ -17,17 +17,29 @@ export const presets = [
   "urth-staff-green-onclick",
   "urth-staff-blue-onclick",
   "audio-button",
-  "screenSelected"
-]
+  "screenSelected",
+];
 
-export const types = ["none", "left", "middle", "right"]
+export const types = ["none", "left", "middle", "right"];
 
-export const statusColors = ["recording", "unread", "enabled", "disabled"]
+export const statusColors = ["recording", "unread", "enabled", "disabled"];
 
 export const ToolbarButton = forwardRef(
   (
-    { preset, className, iconContainerClassName, children, icon, label, selected, large, statusColor, type, ...rest },
-    ref
+    {
+      preset,
+      className,
+      iconContainerClassName,
+      children,
+      icon,
+      label,
+      selected,
+      large,
+      statusColor,
+      type,
+      ...rest
+    },
+    ref,
   ) => {
     return (
       <button
@@ -37,12 +49,16 @@ export const ToolbarButton = forwardRef(
           styles[preset],
           styles[type],
           { [styles.selected]: selected, [styles.large]: large },
-          className
+          className,
         )}
         {...rest}
       >
         <div
-          className={classNames(styles.iconContainer, iconContainerClassName, styles["status-" + statusColor])}
+          className={classNames(
+            styles.iconContainer,
+            iconContainerClassName,
+            styles["status-" + statusColor],
+          )}
           aria-hidden="true"
         >
           {icon}
@@ -50,9 +66,9 @@ export const ToolbarButton = forwardRef(
         </div>
         {label && <label>{label}</label>}
       </button>
-    )
-  }
-)
+    );
+  },
+);
 
 ToolbarButton.propTypes = {
   icon: PropTypes.node,
@@ -64,10 +80,9 @@ ToolbarButton.propTypes = {
   className: PropTypes.string,
   iconContainerClassName: PropTypes.string,
   children: PropTypes.node,
-  type: PropTypes.oneOf(types)
-}
+  type: PropTypes.oneOf(types),
+};
 
 ToolbarButton.defaultProps = {
-  preset: "basic"
-}
-
+  preset: "basic",
+};
