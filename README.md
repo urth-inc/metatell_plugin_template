@@ -1,11 +1,8 @@
-# v-air_plugins_demo
+# metatell_plugins_template
 
-## Local Development
+This repository is to showcase examples of how to create plugins for metatell.
 
-below is the steps to run the project locally
+## List of plugin templates
 
-```
-npm ci
-npm run dev
-```
+- [CustomPluginButton](./CustomPluginButton): This plugin adds a custom button to the metatell toolbar.
 
