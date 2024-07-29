@@ -38,4 +38,5 @@ Each plugin template has its own README file that explains how to develop the pl
 ## List of plugin templates
 
 - [CustomToolbarButton](./CustomToolbarButton): This plugin adds a custom button to the metatell toolbar.
+- [CustomOverlay](./CustomOverlay): This plugin adds a custom overlay to the metatell page.
 
