@@ -32,7 +32,7 @@ interface CustomLeaveButtonProps {
 }
 ```
 
-- `showDefaultModal`: A function that opens the metatell's default leave modal. If you want to custom leave modal, you don't need to use this function.
+- `showDefaultModal`: A function that opens the metatell's default leave modal. If you want to use custom leave modal, you don't need to use this function.
 - `destinationUrl`: The destination URL to navigate to when the user clicks the leave button.
 
 ## How to develop
