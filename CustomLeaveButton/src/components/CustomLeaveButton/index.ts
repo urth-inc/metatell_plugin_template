@@ -1,1 +1,1 @@
-export { CustomLeaveButton } from "./CustomLeaveButton"
+export { CustomLeaveButton } from "./CustomLeaveButton";
