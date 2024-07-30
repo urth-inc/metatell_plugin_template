@@ -12,6 +12,7 @@ This is a template for creating a custom overlay for metatell.
 
 - `npm run dev`: Start the development server
 - `npm run build`: Build the project
+- `npm run test`: Run unit tests
 - `npm run lint`: Run all lint check
 - `npm run lint:tsc`: Run code check based on tsc
 - `npm run lint:prettier`: Run code check based on prettier
