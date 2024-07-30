@@ -29,12 +29,15 @@ export const CustomLeaveButton: React.FC<CustomLeaveButtonProps> = ({
   return (
     <>
       <CustomLeaveModal modalIsOpen={modalIsOpen} closeModal={closeModal} />
-      <div className={styles.customLeaveButtonContainer} onClick={handleClick}>
+      <button
+        className={styles.customLeaveButtonContainer}
+        onClick={handleClick}
+      >
         <div className={styles.sampleIconContainer}>
           <SampleIcon />
         </div>
-        <label className={styles.customLeaveButtonLabel}>Leave</label>
-      </div>
+        <div className={styles.customLeaveButtonLabel}>Leave</div>
+      </button>
     </>
   );
 };
