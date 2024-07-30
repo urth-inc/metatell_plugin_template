@@ -4,12 +4,12 @@ import { CustomLeaveModal } from "../CustomLeaveModal";
 import { SampleIcon } from "./SampleIcon";
 import * as styles from "./CustomLeaveButton.module.scss";
 
-type Props = {
-  showDefaultModal?: () => void;
-  destinationUrl?: string;
-};
+interface CustomLeaveButtonProps {
+  showDefaultModal: () => void;
+  destinationUrl: string;
+}
 
-export const CustomLeaveButton: React.FC<Props> = ({
+export const CustomLeaveButton: React.FC<CustomLeaveButtonProps> = ({
   showDefaultModal,
   destinationUrl,
 }) => {

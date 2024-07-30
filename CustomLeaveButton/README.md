@@ -21,6 +21,20 @@ This is a template for creating a custom LeaveButton for metatell.
 - `npm run lint-fix:prettier`: Run code fix based on prettier
 - `npm run lint-fix:eslint`: Run code fix based on eslint
 
+## Interfaces
+
+The custom leave button should implement the following interface:
+
+```ts
+interface CustomLeaveButtonProps {
+  showDefaultModal: () => void;
+  destinationUrl: string;
+}
+```
+
+- `showDefaultModal`: A function that opens the metatell's default leave modal. If you want to custom leave modal, you don't need to use this function.
+- `destinationUrl`: The destination URL to navigate to when the user clicks the leave button.
+
 ## How to develop
 
 1. Install dependencies

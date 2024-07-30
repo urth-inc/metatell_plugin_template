@@ -9,7 +9,7 @@ const App: React.FC = () => {
       <h2 className={styles.appHeadingContainer}>
         CustomLeaveButton Component
       </h2>
-      <CustomLeaveButton />
+      <CustomLeaveButton showDefaultModal={() => {}} destinationUrl="" />
     </div>
   );
 };
