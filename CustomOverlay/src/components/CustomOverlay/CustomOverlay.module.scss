@@ -1,0 +1,38 @@
+.custom-overlay-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: transparent;
+  height: 100%;
+  margin-bottom: 96px; // 96px is the height of the toolbar
+  color: white;
+}
+
+.sample-overlay1 {
+  pointer-events: auto;
+  background: red;
+  width: 240px;
+  height: 240px;
+}
+
+.overlay-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sample-overlay2 {
+  pointer-events: auto;
+  background: green;
+  width: 240px;
+  height: 240px;
+  color: white;
+}
+
+.sample-overlay3 {
+  pointer-events: auto;
+  background: blue;
+  width: 240px;
+  height: 240px;
+  color: white;
+}
