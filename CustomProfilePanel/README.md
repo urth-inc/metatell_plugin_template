@@ -46,6 +46,15 @@ interface CustomProfilePanelProps {
 }
 ```
 
+- `onClose`: a function to close the profile panel.
+- `displayName`: a string representing the user's display name.
+- `avatarId`: a string representing the ID of the user's current avatar.
+- `avatarThumbnailUrl`: a string representing the URL of the user's current avatar thumbnail image.
+- `selectedAvatarId`: a string representing the ID of the avatar newly selected by the user. If no avatar is selected, it will be undefined.
+- `selectedAvatarThumbnailUrl`: a string representing the URL of the thumbnail image of the avatar newly selected by the user. If no avatar is selected, it will be undefined.
+- `openAvatarSelectModal`: a function to open the avatar selection modal.
+- `saveProfile`: a function to save profile information. This function takes an object as an argument, which includes displayName, bio, and avatarId.
+
 ## How to develop
 
 1. Install dependencies
