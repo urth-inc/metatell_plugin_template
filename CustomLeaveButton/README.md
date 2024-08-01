@@ -57,7 +57,7 @@ npm run dev
 
 3. update package.json to add metadata
 
-Update the package.json file to add metadata about the custom toolbar button. The metadata includes the name, description, and icon of the custom toolbar button.
+Update the package.json file to add metadata about the custom leave button. The metadata includes the name, description, and icon of the custom leave button.
 
 You can update the following fields to the package.json file:
 
