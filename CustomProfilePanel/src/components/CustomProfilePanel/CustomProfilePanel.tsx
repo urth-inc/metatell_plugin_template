@@ -44,8 +44,8 @@ export const CustomProfilePanel: React.FC<CustomProfilePanelProps> = ({
       <button
         onClick={() => {
           saveProfile({
-            displayName: "hoge2",
-            bio: "fuga2",
+            displayName: "displayName",
+            bio: "bio",
             avatarId: selectedAvatarId || avatarId,
           });
         }}
