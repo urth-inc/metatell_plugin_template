@@ -37,8 +37,8 @@ interface CustomEntryPanelProps {
   onSpectate: () => void;
   showOptions: boolean;
   onOptions: () => void;
-  leftImage: React.Node;
-  rightImage: React.Node;
+  leftImage: React.ReactNode;
+  rightImage: React.ReactNode;
   leftMessage: string;
   rightMessage: string;
   termsOfServiceUrl: string | undefined;
