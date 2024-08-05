@@ -4,6 +4,16 @@
 
 This is a template for creating a CustomEntryPanel for `metatell`.
 
+`metatell` has a built-in entry panel that allows users to join a room, enter with a VR headset, spectate, and access room settings. You can replace the default entry panel with a custom entry panel by creating a CustomEntryPanel.
+
+The default entry panel looks like this:
+
+<center>
+  <img src="./docs/entry-panel.png" alt="default entry panel" width="800"/>
+</center>
+
+You can replace the default entry panel with a custom entry panel that matches your branding or design requirements.
+
 ## Pre-requisites
 
 - Node.js 20 (We recommend using volta to manage node versions)
