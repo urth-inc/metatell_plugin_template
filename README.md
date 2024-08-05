@@ -38,7 +38,8 @@ Each plugin template has its own README file that explains how to develop the pl
 ## List of plugin templates
 
 - [CustomEntryPanel](./CustomEntryPanel): This plugin template shows how to create a custom entry panel.
-- [CustomProfilePanel](./CustomProfilePanel): This plugin template shows how to create a custom profile panel.
+- [CustomProfileModal](./CustomProfileModal): This plugin template shows how to create a custom profile modal.
+- [CustomChatButton](./CustomChatButton): This plugin template shows how to create a custom chat button and modal.
 - [CustomLeaveButton](./CustomLeaveButton): This plugin template shows how to create a custom leave button.
 - [CustomToolbarButton](./CustomToolbarButton): This plugin template shows how to create a custom toolbar button.
 - [CustomOverlay](./CustomOverlay): This plugin template shows how to create a custom overlay.

@@ -4,7 +4,7 @@ module.exports = {
   name: "plugin",
   filename: "remoteEntry.js",
   exposes: {
-    "./CustomProfilePanel": "./src/components/CustomProfilePanel",
+    "./CustomProfileModal": "./src/components/CustomProfileModal",
   },
   shared: {
     react: {
