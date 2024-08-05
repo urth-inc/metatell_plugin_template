@@ -52,7 +52,8 @@
   },
   "dependencies": {
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "react-modal": "^3.16.1"
   },
   "volta": {
     "node": "20.14.0",

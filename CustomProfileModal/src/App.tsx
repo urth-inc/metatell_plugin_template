@@ -1,11 +1,13 @@
 import React from "react";
-import { CustomProfilePanel } from "./components/CustomProfilePanel";
+import { CustomProfileModal } from "./components/CustomProfileModal";
 
 import * as styles from "./App.module.scss";
 
 const App: React.FC = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const dummyProps = {
-    onClose: () => console.log("Close button clicked"),
+    isOpen,
+    onClose: () => setIsOpen(false),
     displayName: "John Doe",
     avatarId: "1",
     avatarThumbnailUrl: undefined,
@@ -28,7 +30,14 @@ const App: React.FC = () => {
   return (
     <div className={styles.appContainer}>
       <h2 className={styles.appHeadingContainer}>CustomEntryPanel Component</h2>
-      <CustomProfilePanel {...dummyProps} />
+      <button
+        onClick={() => {
+          setIsOpen(true);
+        }}
+      >
+        Open Modal
+      </button>
+      <CustomProfileModal {...dummyProps} />
     </div>
   );
 };
