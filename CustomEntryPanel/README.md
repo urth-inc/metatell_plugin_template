@@ -8,9 +8,9 @@ This is a template for creating a CustomEntryPanel for `metatell`.
 
 The default entry panel looks like this:
 
-<center>
+<p align="center">
   <img src="./docs/entry-panel.png" alt="default entry panel" width="800"/>
-</center>
+</p>
 
 You can replace the default entry panel with a custom entry panel that matches your branding or design requirements.
 
