@@ -9,7 +9,10 @@ type Props = {
   modalIsOpen: boolean;
   closeModal: () => void;
   sendMessage: (message: string) => void;
-  MessageGroups: any[];
+  MessageGroups: any[]; // TODO: Define the type
+  canSpawnMessages: boolean;
+  onUploadFiles: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  spawnChatMessage: (message: string) => void;
 };
 
 export const CustomChatModal: React.FC<Props> = ({
@@ -17,6 +20,9 @@ export const CustomChatModal: React.FC<Props> = ({
   closeModal,
   sendMessage,
   messageGroups,
+  onUploadFiles,
+  canSpawnMessages,
+  spawnChatMessage,
 }) => {
   const [message, setMessage] = useState("");
   const handleClick = () => {
@@ -55,6 +61,19 @@ export const CustomChatModal: React.FC<Props> = ({
         onChange={(e) => setMessage(e.target.value)}
       />
       <button onClick={handleClick}>Send</button>
+      <input
+        type="file"
+        disabled={!canSpawnMessages}
+        onChange={onUploadFiles}
+      />
+      <button
+        onClick={() => {
+          spawnChatMessage(message);
+          setMessage("");
+        }}
+      >
+        Spawn Message
+      </button>
     </Modal>
   );
 };

@@ -30,12 +30,18 @@ type MessageGroup = {
 
 interface CustomChatButtonProps {
   toggleDefaultModal: () => void;
+  canSpawnMessages: boolean;
+  onUploadFiles: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  spawnChatMessage: (message: string) => void;
   sendMessage: (message: string) => void;
   messageGroups: MessageGroup[];
 }
 
 export const CustomChatButton: React.FC<CustomChatButtonProps> = ({
   toggleDefaultModal,
+  canSpawnMessages,
+  onUploadFiles,
+  spawnChatMessage,
   sendMessage,
   messageGroups,
 }) => {
@@ -59,6 +65,9 @@ export const CustomChatButton: React.FC<CustomChatButtonProps> = ({
         closeModal={closeModal}
         sendMessage={sendMessage}
         messageGroups={messageGroups}
+        canSpawnMessages={canSpawnMessages}
+        onUploadFiles={onUploadFiles}
+        spawnChatMessage={spawnChatMessage}
       />
       <button
         className={styles.customLeaveButtonContainer}
