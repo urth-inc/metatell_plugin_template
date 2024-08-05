@@ -9,12 +9,16 @@ This is a template for creating a CustomChatButton for `metatell`.
 Default chat button looks like this:
 Chat button is located at the most right side of the toolbar.
 
-![Default chat button](./docs/toolbar.png)
+<p align="center">
+  <img src="./docs/toolbar.png" alt="default chat button" />
+</p>
 
 When the chat button is clicked, the chat modal is displayed:
 Default chat modal looks like this:
 
-![Default chat modal](./docs/chat-modal.png)
+<p align="center">
+  <img src="./docs/chat-modal.png" alt="default chat modal" />
+</p>
 
 You can replace the default chat button and modal with a custom chat button and modal by creating a CustomChatButton.
 
