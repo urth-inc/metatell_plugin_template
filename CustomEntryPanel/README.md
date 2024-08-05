@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a template for creating a custom EntryPanel for metatell.
+This is a template for creating a CustomEntryPanel for `metatell`.
 
 ## Pre-requisites
 
@@ -84,7 +84,7 @@ npm run dev
 
 3. update package.json to add metadata
 
-Update the package.json file to add metadata about the custom entry panel. The metadata includes the name, description, and icon of the custom entry panel.
+Update the package.json file to add metadata about the CustomEntryPanel. The metadata includes the name, description, and the version of plugin.
 
 You can update the following fields to the package.json file:
 
@@ -108,7 +108,7 @@ You can find the built files in the `dist` directory.
 
 5. Publish the project
 
-You can publish the plugin from metatell-admin in future.
+You can publish the plugin from `metatell-admin` in future.
 
 ## Tips
 
