@@ -37,7 +37,7 @@ You can replace the default leave button and modal with a custom one by creating
 - `npm run lint-fix:prettier`: Run code fix based on prettier
 - `npm run lint-fix:eslint`: Run code fix based on eslint
 
-## Interfaces
+## Interface
 
 The custom leave button should implement the following interface:
 
@@ -73,7 +73,7 @@ npm run dev
 
 3. update package.json to add metadata
 
-Update the package.json file to add metadata about the custom leave button. The metadata includes the name, description, and icon of the custom leave button.
+Update the package.json file to add metadata about the custom leave button. The metadata includes the name, description, and version of the plugin.
 
 You can update the following fields to the package.json file:
 
@@ -103,8 +103,8 @@ You can publish the plugin from metatell-admin in future.
 
 ### Restrictions
 
-- Do not use default export. export Component as named export
-- Component name should be `CustomLeaveButton`
+- do not use default export. export Component as named export
+- component name should be `CustomLeaveButton`
 - component should be placed in `src/CustomLeaveButton` directory
   - You can change the directory to update federation config in `/configs/federationConfig.js`
 
