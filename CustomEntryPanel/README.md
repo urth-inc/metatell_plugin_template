@@ -38,6 +38,7 @@ The custom entry panel should implement the following interface:
 ```ts
 interface CustomEntryPanelProps {
   roomName: string | undefined;
+  logoUrl: string | undefined;
   showJoinRoom: boolean;
   isRoomFull: boolean;
   onJoinRoom: () => void;
@@ -57,6 +58,7 @@ interface CustomEntryPanelProps {
 ```
 
 - `roomName`: The name of the room.
+- `logoUrl`: The URL of the logo image.
 - `showJoinRoom`: A boolean value that controls whether to display the "Join Room" button.
 - `isRoomFull`: A boolean value indicating whether the room is full.
 - `onJoinRoom`: A function that is executed when the "Join Room" button is clicked.

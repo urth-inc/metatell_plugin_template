@@ -3,6 +3,7 @@ import * as styles from "./CustomEntryPanel.module.scss";
 
 interface CustomEntryPanelProps {
   roomName: string | undefined;
+  logoUrl: string | undefined;
   showJoinRoom: boolean;
   isRoomFull: boolean;
   onJoinRoom: () => void;
@@ -22,6 +23,7 @@ interface CustomEntryPanelProps {
 
 export const CustomEntryPanel: React.FC<CustomEntryPanelProps> = ({
   roomName,
+  logoUrl,
   showJoinRoom,
   isRoomFull,
   onJoinRoom,
@@ -42,6 +44,7 @@ export const CustomEntryPanel: React.FC<CustomEntryPanelProps> = ({
     <div>
       {/* TODO: Implement your custom entry panel here */}
       <h1>Custom Entry Panel</h1>
+      <img src={logoUrl} alt="logo" />
     </div>
   );
 };
