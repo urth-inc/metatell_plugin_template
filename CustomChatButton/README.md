@@ -125,7 +125,7 @@ npm run dev
 
 3. update package.json to add metadata
 
-Update the package.json file to add metadata about the CustomChatButton. The metadata includes the name, description, and the version of plugin.
+Update the package.json file to add metadata about the CustomChatButton. The metadata includes the name, description, and version of the plugin.
 
 You can update the following fields to the package.json file:
 
@@ -155,10 +155,10 @@ You can publish the plugin from `metatell-admin` in future.
 
 ### Restrictions
 
-- Do not use default export. export Component as named export
-- Component name should be `CustomChatButton`
+- do not use default export. export Component as named export
+- component name should be `CustomChatButton`
 - component should be placed in `src/CustomChatButton` directory
-  - You can change the directory to update federation config in `/configs/federationConfig.js`
+  - You can change the directory by updating federation config in `/configs/federationConfig.js`
 
 ### Styling
 
