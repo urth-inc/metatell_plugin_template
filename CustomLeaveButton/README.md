@@ -2,7 +2,23 @@
 
 ## Description
 
-This is a template for creating a custom LeaveButton for metatell.
+This is a template for creating a CustomLeaveButton for `metatell`.
+
+`metatell` has a built-in leave button feature that opens a modal when the user clicks the leave button. The leave button is located at the second right side of the toolbar.
+The default leave button looks like this:
+
+<p align="center">
+  <img src="./docs/toolbar.png" alt="default leave button" />
+</p>
+
+When the leave button is clicked, the leave modal is displayed:
+Default leave modal looks like this:
+
+<p align="center">
+  <img src="./docs/leave-modal.png" alt="default leave modal" />
+</p>
+
+You can replace the default leave button and modal with a custom one by creating a CustomChatButton.
 
 ## Pre-requisites
 
