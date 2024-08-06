@@ -5,13 +5,14 @@
 This is a template for creating a CustomOverlay for `metatell`.
 
 CustomOverlay allows you to create a custom overlay for the `metatell` application.
+
 Bellow screenshot are the example of custom overlay:
 
 <p align="center">
   <img src="./docs/sample-overlay.png" alt="CustomOverlay example" />
 </p>
 
-## interface
+## Interface
 
 ```tsx
 interface CustomOverlayProps {}
