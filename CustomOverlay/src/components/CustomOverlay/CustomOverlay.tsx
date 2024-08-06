@@ -2,7 +2,9 @@ import React from "react";
 
 import * as styles from "./CustomOverlay.module.scss";
 
-export const CustomOverlay: React.FC = () => {
+interface CustomOverlayProps {}
+
+export const CustomOverlay: React.FC<CustomOverlayProps> = () => {
   return (
     <div className={styles.customOverlayContainer}>
       <div className={styles.sampleOverlay1}>

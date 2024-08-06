@@ -2,7 +2,22 @@
 
 ## Description
 
-This is a template for creating a custom overlay for metatell.
+This is a template for creating a CustomOverlay for `metatell`.
+
+CustomOverlay allows you to create a custom overlay for the `metatell` application.
+Bellow screenshot are the example of custom overlay:
+
+<p align="center">
+  <img src="./docs/sample-overlay.png" alt="CustomOverlay example" />
+</p>
+
+## interface
+
+```tsx
+interface CustomOverlayProps {}
+```
+
+CustomOverlay has no props.
 
 ## Pre-requisites
 
@@ -43,7 +58,7 @@ npm run dev
 
 3. update package.json to add metadata
 
-Update the package.json file to add metadata about the custom overlay. The metadata includes the name, description, and icon of the custom overlay.
+Update the package.json file to add metadata about the CustomOverlay. The metadata includes the name, description, and the version of the plugin.
 
 You can update the following fields to the package.json file:
 
@@ -67,18 +82,18 @@ You can find the built files in the `dist` directory.
 
 5. Publish the project
 
-You can publish the plugin from metatell-admin in future.
+You can publish the plugin from `metatell-admin` in future.
 
 ## Tips
 
 ### Restrictions
 
-- Do not use default export. export Component as named export
-- Component name should be `CustomOverlay`
+- do not use default export. export Component as named export
+- component name should be `CustomOverlay`
 - component should be placed in `src/CustomOverlay` directory
-  - You can change the directory to update federation config in `/configs/federationConfig.js`
+  - You can change the directory by updating federation config in `/configs/federationConfig.js`
 
-### Styling
+### Styling ecosystem
 
 You can use CSS Modules without any additional configuration.
 
