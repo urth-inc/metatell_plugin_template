@@ -69,12 +69,18 @@ type MessageGroup = {
 
 interface CustomChatButtonProps {
   toggleDefaultModal: () => void;
+  canSpawnMessages: boolean;
+  onUploadFiles: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  spawnChatMessage: (message: string) => void;
   sendMessage: (message: string) => void;
   messageGroups: MessageGroup[];
 }
 ```
 
 - `toggleDefaultModal`: A function that toggles the default chat modal.
+- `canSpawnMessages`: A boolean value that indicates whether the user can spawn messages.
+- `onUploadFiles`: A function that handles file uploads.
+- `spawnChatMessage`: A function that spawns a text message in 3D space.
 - `sendMessage`: A function that sends a message to the chat.
 - `messageGroups`: An array of message groups. A message group is an object that contains information about a group of messages. The message group object has the following properties:
   - `id`: A unique identifier for the message group.
