@@ -43,17 +43,19 @@ The CustomWebCameraButton should implement the following interface:
 interface CustomWebCameraButtonProps {
   isSharingCamera: boolean;
   canShareCamera: boolean;
-  toggleShareCamera: () => void;
   canShareCameraToAvatar: boolean;
-  toggleShareCameraToAvatar: () => void;
+  stopSharingCamera: () => void;
+  startSharingCamera: () => void;
+  startSharingCameraToAvatar: () => void;
 }
 ```
 
 - `isSharingCamera`: A boolean value that indicates whether the user is sharing the web camera.
 - `canShareCamera`: A boolean value that indicates whether the user can share the web camera.
-- `toggleShareCamera`: A function that toggles the web camera sharing.
 - `canShareCameraToAvatar`: A boolean value that indicates whether the user can share the web camera to the avatar.
-- `toggleShareCameraToAvatar`: A function that toggles the web camera sharing to the avatar.
+- `stopSharingCamera`: A function that stops sharing the web camera.
+- `startSharingCamera`: A function that starts sharing the web camera.
+- `startSharingCameraToAvatar`: A function that starts sharing the web camera to the avatar.
 
 ## How to develop
 

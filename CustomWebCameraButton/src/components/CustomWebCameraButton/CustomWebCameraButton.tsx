@@ -10,17 +10,19 @@ import * as styles from "./CustomWebCameraButton.module.scss";
 interface CustomWebCameraButtonProps {
   isSharingCamera: boolean;
   canShareCamera: boolean;
-  toggleShareCamera: () => void;
   canShareCameraToAvatar: boolean;
-  toggleShareCameraToAvatar: () => void;
+  stopSharingCamera: () => void;
+  startSharingCamera: () => void;
+  startSharingCameraToAvatar: () => void;
 }
 
 export const CustomWebCameraButton: React.FC<CustomWebCameraButtonProps> = ({
   isSharingCamera,
   canShareCamera,
-  toggleShareCamera,
   canShareCameraToAvatar,
-  toggleShareCameraToAvatar,
+  stopSharingCamera,
+  startSharingCamera,
+  startSharingCameraToAvatar,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -50,38 +52,19 @@ export const CustomWebCameraButton: React.FC<CustomWebCameraButtonProps> = ({
     };
   }, []);
 
-  const [isCameraEnabled, setIsCameraEnabled] = useState(false);
-  const [isAvatarCameraEnabled, setIsAvatarCameraEnabled] = useState(false);
   const handleClickShareCamera = () => {
-    setIsCameraEnabled(!isCameraEnabled);
-    if (isAvatarCameraEnabled) {
-      setIsAvatarCameraEnabled(false);
-    }
-
-    toggleShareCamera();
+    startSharingCamera();
     setIsOpen(false);
   };
 
   const handleClickShareCameraToAvatar = () => {
-    setIsAvatarCameraEnabled(!isAvatarCameraEnabled);
-    if (isCameraEnabled) {
-      setIsCameraEnabled(false);
-    }
-
-    toggleShareCameraToAvatar();
+    startSharingCameraToAvatar();
     setIsOpen(false);
   };
 
-  const handleClick = () => {
-    if (isCameraEnabled) {
-      toggleShareCamera();
-      setIsCameraEnabled(false);
-      return;
-    }
-
-    if (isAvatarCameraEnabled) {
-      toggleShareCameraToAvatar();
-      setIsAvatarCameraEnabled(false);
+  const handleClickCustomWebCameraButton = () => {
+    if (isSharingCamera) {
+      stopSharingCamera();
       return;
     }
 
@@ -128,7 +111,7 @@ export const CustomWebCameraButton: React.FC<CustomWebCameraButtonProps> = ({
         ref={buttonRef}
         id="clickable"
         className={styles.customWebCameraButtonContainer}
-        onClick={handleClick}
+        onClick={handleClickCustomWebCameraButton}
       >
         <div className={styles.iconContainer}>
           {isSharingCamera ? <VideoEnabledIcon /> : <VideoDisabledIcon />}
