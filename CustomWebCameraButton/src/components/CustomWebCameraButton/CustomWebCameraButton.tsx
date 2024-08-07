@@ -8,7 +8,7 @@ import { CameraIcon } from "./CameraIcon";
 import * as styles from "./CustomWebCameraButton.module.scss";
 
 interface CustomWebCameraButtonProps {
-  isSharing: boolean;
+  isSharingCamera: boolean;
   canShareCamera: boolean;
   toggleShareCamera: () => void;
   canShareCameraToAvatar: boolean;
@@ -16,7 +16,7 @@ interface CustomWebCameraButtonProps {
 }
 
 export const CustomWebCameraButton: React.FC<CustomWebCameraButtonProps> = ({
-  isSharing,
+  isSharingCamera,
   canShareCamera,
   toggleShareCamera,
   canShareCameraToAvatar,
@@ -131,9 +131,9 @@ export const CustomWebCameraButton: React.FC<CustomWebCameraButtonProps> = ({
         onClick={handleClick}
       >
         <div className={styles.iconContainer}>
-          {isSharing ? <VideoEnabledIcon /> : <VideoDisabledIcon />}
+          {isSharingCamera ? <VideoEnabledIcon /> : <VideoDisabledIcon />}
         </div>
-        {isSharing ? (
+        {isSharingCamera ? (
           <div className={styles.customWebCameraButtonLabelText}>Webカメラ</div>
         ) : (
           <div className={styles.customWebCameraButtonLabelTextDisabled}>

@@ -37,11 +37,11 @@ You can replace the default web camera button with a custom one by implementing 
 
 ## Interface
 
-The CustomWebCemeraButton should implement the following interface:
+The CustomWebCameraButton should implement the following interface:
 
 ```ts
 interface CustomWebCameraButtonProps {
-  isSharing: boolean;
+  isSharingCamera: boolean;
   canShareCamera: boolean;
   toggleShareCamera: () => void;
   canShareCameraToAvatar: boolean;
@@ -49,7 +49,7 @@ interface CustomWebCameraButtonProps {
 }
 ```
 
-- `isSharing`: A boolean value that indicates whether the user is sharing the web camera.
+- `isSharingCamera`: A boolean value that indicates whether the user is sharing the web camera.
 - `canShareCamera`: A boolean value that indicates whether the user can share the web camera.
 - `toggleShareCamera`: A function that toggles the web camera sharing.
 - `canShareCameraToAvatar`: A boolean value that indicates whether the user can share the web camera to the avatar.

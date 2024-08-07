@@ -5,7 +5,7 @@ import * as styles from "./App.module.scss";
 
 const App: React.FC = () => {
   const dummyProps = {
-    isSharing: false,
+    isSharingCamera: false,
     canShareCamera: true,
     toggleShareCamera: () => {},
     canShareCameraToAvatar: true,
