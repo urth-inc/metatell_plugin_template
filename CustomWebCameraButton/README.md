@@ -106,8 +106,8 @@ You can publish the plugin from `metatell-admin` in future.
 ### Restrictions
 
 - do not use default export. export Component as named export
-- component name should be `CustomLeaveButton`
-- component should be placed in `src/CustomLeaveButton` directory
+- component name should be `CustomWebCameraButton`
+- component should be placed in `src/CustomWebCameraButton` directory
   - You can change the directory to update federation config in `/configs/federationConfig.js`
 
 ### Styling
