@@ -1,1 +1,287 @@
 /* TODO: some styles */
+:local(.tempWrapper) {
+  position: relative;
+  grid-row-start: viewport;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+:local(.keyboard) {
+  position: fixed;
+  top: 50vh;
+  left: 4vw;
+  transform: translate(0, -50%);
+
+  p {
+    text-align: right;
+  }
+}
+
+:local(.mouse) {
+  position: fixed;
+  top: 50vh;
+  right: 4vw;
+  transform: translate(0, -50%);
+
+  p {
+    text-align: left;
+  }
+}
+
+:local(.container) {
+  display: none;
+
+  @media (min-width: 960px) {
+    display: flex;
+    align-items: center;
+
+    img {
+      max-width: 16vw;
+      margin: 1rem;
+    }
+
+    svg {
+      min-width: 12vw;
+      height: 20vh;
+      margin: 1rem;
+      stroke: black;
+    }
+
+    p {
+      width: 15vw;
+      font-size: 1.4rem;
+      font-weight: 700;
+      overflow-wrap: break-word;
+    }
+  }
+}
+
+:local(.modal) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  border: none;
+  //border-radius: theme.$border-radius-regular;
+  margin: 24px;
+  z-index: 1;
+  width: 100%;
+  // max-width: 360px;
+  //半透明のブラックを中央のポップオーバーの背景色に
+  background-color: rgba($color: #303030, $alpha: 0.5);
+  max-width: 460px;
+}
+
+:local(.modalContent) {
+  min-height: 200px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: white;
+}
+
+:local(.column) {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+:local(.center) {
+  align-items: center;
+  text-align: center;
+}
+
+:local(.centerContent) {
+  padding: 24px 8px;
+
+  &::before {
+    content: "";
+    background-color: rgba($color: #303030, $alpha: 1);
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 150vw;
+    overflow: visible;
+    z-index: -1;
+  }
+
+  @media (min-width: 960px) {
+    &::before {
+      content: "";
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      position: fixed;
+      top: 0;
+      height: 100vh;
+      overflow: visible;
+      z-index: -1;
+    }
+  }
+
+  button {
+    width: 156px;
+  }
+
+  @media (min-width: 992px) and (min-height: 600px) {
+    padding: 24px;
+  }
+}
+
+:local(.logoContainer) {
+  padding: 0 16px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+:local(.roomName) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+:local(.buttonCommon) {
+  height: 48px;
+  min-height: 48px;
+  min-width: 156px;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 8px;
+  border-width: 0;
+  border-color: transparent;
+  transition: background-color 0.1s ease-in-out;
+  white-space: nowrap;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+:local(.buttonCommon):disabled {
+  border-color: transparent;
+  cursor: not-allowed;
+  color: #868686;
+  opacity: 0.7;
+  background-color: #e7e7e7;
+}
+
+:local(.accent4) {
+  color: white;
+  background-color: #2aadef;
+  border: 2px solid #12a4ed;
+}
+
+:local(.accent5) {
+  color: white;
+  background-color: #7854f6;
+  border: 2px solid #7854f6;
+}
+
+:local(.accent2) {
+  color: white;
+  background-color: #ff8500;
+  border: 2px solid #ff8500;
+}
+
+:local(.transparent) {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+:local(.customHr) {
+  position: relative;
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid #bbbbbb;
+  margin: 16px 0;
+}
+
+:local(.full-room-description-container) {
+  font-size: 12px;
+  margin: 16px 0;
+}
+
+:local(.termsCheckboxBlock) {
+  &:not(:first-child) {
+    margin-top: 0.6rem;
+  }
+}
+
+:local(.checkboxInput) {
+  display: flex;
+  height: 20px;
+  align-items: center;
+  position: relative;
+  padding-left: 1rem;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:local(.checkboxInput) input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+:local(.checkmark) {
+  // custom checkbox
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  border: 2px solid #e7e7e7;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}
+
+:local(.checkboxInput) input:checked ~ :local(.checkmark):after {
+  display: block;
+}
+
+:local(.checkboxInput):hover input ~ :local(.checkmark) {
+  background-color: #ccc;
+}
+
+:local(.checkboxInput) input:checked ~ :local(.checkmark) {
+  background-color: #2196f3;
+  border: 2px solid #2196f3;
+}
+
+:local(.checkboxInput) :local(.checkmark):after {
+  left: 6px;
+  top: 1px;
+  width: 5px;
+  height: 12px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+:local(.labelContainer) {
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  color: #868686;
+  font-weight: 700;
+}
+
+:local(.customA) {
+  color: #12a4ed;
+  text-decoration: none;
+}

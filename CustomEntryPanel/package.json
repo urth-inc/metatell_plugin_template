@@ -52,7 +52,8 @@
   },
   "dependencies": {
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "react-use-css-breakpoints": "^1.0.5"
   },
   "volta": {
     "node": "20.14.0",
