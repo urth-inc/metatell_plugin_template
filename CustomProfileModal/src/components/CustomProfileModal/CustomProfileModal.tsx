@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 
 import * as styles from "./CustomProfileModal.module.scss";
@@ -38,6 +38,16 @@ export const CustomProfileModal: React.FC<CustomProfileModalProps> = ({
   selectedAvatarThumbnailUrl,
   saveProfile,
 }) => {
+  const [displayNameInput, setDisplayNameInput] = useState<string>(displayName)
+  const handleDisplayNameInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setDisplayNameInput(event.target.value);
+  };
+
+  const [bioInput, setBioInput] = useState<string>(bio)
+  const handleBioInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setBioInput(event.target.value);
+  };
+
   return (
     <Modal
       isOpen={isOpen}
@@ -45,32 +55,64 @@ export const CustomProfileModal: React.FC<CustomProfileModalProps> = ({
       className={styles.modalContent}
       overlayClassName={styles.modalOverlay}
     >
-      <div className={styles.modalHeader}>
-        <div className={styles.modalTitle}>Example Modal</div>
-      </div>
+      <div className={styles.modalContentWrapper}>
+        <div className={styles.modalHeader}>
+          <div className={styles.beforeTitle}>
+            <button className={styles.iconButton} onClick={onClose}>
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 17 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 3 3 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </div>
+          <h5>アバター設定</h5>
+        </div>
 
-      <div className={styles.modalBody}>
-        <p>This is a example Modal for demo</p>
-        <button onClick={onClose}>Close</button>
-        <h2>Name: {displayName}</h2>
-        <h2>bio: {bio}</h2>
-        <h2>Avatar: {selectedAvatarId ?? avatarId}</h2>
-        <button onClick={openAvatarSelectModal}>Change Avatar</button>
-        <img
-          src={selectedAvatarThumbnailUrl ?? avatarThumbnailUrl}
-          alt="avatar"
-        />
-        <button
-          onClick={() => {
-            saveProfile({
-              displayName: "New Name",
-              avatarId: selectedAvatarId,
-            });
-            onClose();
-          }}
-        >
-          Save
-        </button>
+        <div className={styles.modalBody}>
+          <form className={styles.formContent}>
+            <div className={styles.inputField}>
+              <label className={styles.inputFieldLabel}>ニックネーム</label>
+              <div className={styles.inputOuterWrapper}>
+                <div className={styles.textInputWrapper}>
+                  <input className={styles.textInput} value={displayNameInput} onChange={handleDisplayNameInputChange} />
+                </div>
+              </div>
+              <div className={styles.inputFieldInfo}>32文字以下で入力してください。絵文字は使用できません。</div>
+            </div>
+
+            <div className={styles.inputField}>
+              <label className={styles.inputFieldLabel}>プロフィール</label>
+              <div className={`${styles.inputOuterWrapper} ${styles.textArea}`}>
+                <div className={styles.textInputWrapper}>
+                  <textarea className={styles.textInput} placeholder="あなたのことについて書きましょう" value={bioInput} onChange={handleBioInputChange}></textarea>
+                </div>
+              </div>
+              <div className={styles.textAreaFieldInfo}>{`${bioInput ? bioInput.length : 0}/${300}`}</div>
+            </div>
+
+            <div className={styles.avatarPreviewContainer}>
+              <div className={styles.avatarPreview}>
+                {avatarThumbnailUrl === undefined ? (
+                  <div className={styles.avatarLoading}>
+                    <p>Loading...</p>
+                  </div>
+                ) : (
+                  <img className={styles.avatarImg} src={selectedAvatarThumbnailUrl ?? avatarThumbnailUrl} alt="avatar" />
+                )}
+                <button className={`${styles.button} ${styles.basic}`} onClick={openAvatarSelectModal}>
+                  アバターを変更
+                </button>
+              </div>
+              <button
+                className={`${styles.button} ${styles.accept}`}
+                onClick={() => {
+                  saveProfile({
+                    displayName: displayNameInput,
+                    bio: bioInput,
+                    avatarId: selectedAvatarId,
+                  });
+                  onClose();
+                }}>変更を保存</button>
+            </div>
+          </form>
+        </div>
       </div>
     </Modal>
   );
