@@ -6,6 +6,7 @@ const metadata = {
   name,
   version,
   description,
+  type: "CustomOverlay",
 };
 const jsonData = JSON.stringify(metadata, null, 2);
 
