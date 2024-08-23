@@ -47,7 +47,6 @@ export const CustomEntryPanel: React.FC<CustomEntryPanelProps> = ({
   const [agreeToPrivacy, setAgreeToPrivacy] = useState(false)
 
   const handleAgreeToTerms = () => {
-    console.log('aaaa')
     setAgreeToTerms(!agreeToTerms)
   }
   const handleAgreeToPrivacy = () => setAgreeToPrivacy(!agreeToPrivacy)
