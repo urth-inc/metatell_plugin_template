@@ -1,11 +1,15 @@
 const path = require("path");
 const fs = require("fs");
 const { name, version, description } = require("../package.json");
+const process = require("process");
 
+const versionId = process.argv[2];
 const metadata = {
   name,
   version,
   description,
+  type: "CustomEntryPanel",
+  versionId,
 };
 const jsonData = JSON.stringify(metadata, null, 2);
 

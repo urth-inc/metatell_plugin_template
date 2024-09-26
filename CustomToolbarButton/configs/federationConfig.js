@@ -1,7 +1,8 @@
 const dependencies = require("../package.json").dependencies;
+const process = require("process");
 
 module.exports = {
-  name: "plugin",
+  name: process.env.VERSION_ID,
   filename: "remoteEntry.js",
   exposes: {
     "./CustomToolbarButton": "./src/components/CustomToolbarButton",
