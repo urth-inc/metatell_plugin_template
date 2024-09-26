@@ -10,7 +10,6 @@ const metadata = {
   description,
   type: "CustomToolbarButton",
   versionId,
-
 };
 const jsonData = JSON.stringify(metadata, null, 2);
 
