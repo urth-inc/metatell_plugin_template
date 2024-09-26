@@ -6,7 +6,7 @@
     "start": "webpack --watch --mode development --config webpack.config.js",
     "serve": "webpack serve --mode development --config webpack.config.js",
     "dev": "npm-run-all --parallel start serve",
-    "build": "npm run set-uuid && export $(cat .uuid.env) && webpack --progress --mode production --config webpack.config.js && node ./scripts/add_metadata.js $UUID && node ./scripts/archive_dist.js",
+    "build": "npm run set-uuid && export $(cat .uuid.env) && webpack --progress --mode production --config webpack.config.js && node ./scripts/add_metadata.js $VERSION_ID && node ./scripts/archive_dist.js",
     "test": "jest",
     "lint": "run-s -c lint:*",
     "lint:tsc": "tsc --noEmit",

@@ -90,7 +90,7 @@ module.exports = {
       ignoreOrder: true,
     }),
     new webpack.DefinePlugin({
-      "process.env.UUID": JSON.stringify(process.env.UUID),
+      "process.env.VERSION_ID": JSON.stringify(process.env.VERSION_ID),
     }),
   ],
   resolve: {
