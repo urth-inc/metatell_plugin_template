@@ -6,7 +6,7 @@
     "start": "webpack --watch --mode development --config webpack.config.js",
     "serve": "webpack serve --mode development --config webpack.config.js",
     "dev": "npm-run-all --parallel start serve",
-    "build": "webpack --progress --mode production --config webpack.config.js && node ./scripts/add_metadata.js && node ./scripts/archive_dist.js",
+    "build": "npm run set-uuid && export $(cat .uuid.env) && webpack --progress --mode production --config webpack.config.js && node ./scripts/add_metadata.js $UUID && node ./scripts/archive_dist.js",
     "test": "jest",
     "lint": "run-s -c lint:*",
     "lint:tsc": "tsc --noEmit",
@@ -14,7 +14,8 @@
     "lint:eslint": "eslint ./src",
     "lint-fix": "run-s -c lint-fix:*",
     "lint-fix:prettier": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,scss}'",
-    "lint-fix:eslint": "eslint --fix ./src"
+    "lint-fix:eslint": "eslint --fix ./src",
+    "set-uuid": "node ./scripts/set_uuid.js > .uuid.env"
   },
   "devDependencies": {
     "@babel/core": "^7.24.9",
@@ -46,6 +47,7 @@
     "sass-loader": "^15.0.0",
     "ts-jest": "^29.2.3",
     "typescript": "^5.5.4",
+    "uuidv4": "^6.2.13",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"

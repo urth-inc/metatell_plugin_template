@@ -1,7 +1,8 @@
 const dependencies = require("../package.json").dependencies;
+const process = require("process");
 
 module.exports = {
-  name: "plugin",
+  name: process.env.UUID,
   filename: "remoteEntry.js",
   exposes: {
     "./CustomEntryPanel": "./src/components/CustomEntryPanel",

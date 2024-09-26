@@ -1,3 +1,5 @@
+const webpack = require("webpack");
+const process = require("process");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin =
@@ -86,6 +88,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "assets/stylesheets/[name]-[contenthash].css",
       ignoreOrder: true,
+    }),
+    new webpack.DefinePlugin({
+      "process.env.UUID": JSON.stringify(process.env.UUID),
     }),
   ],
   resolve: {
