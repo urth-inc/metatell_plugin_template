@@ -1,8 +1,8 @@
-# CustomToolbarButton template
+# AdditionalToolbarButton template
 
 ## Description
 
-This is a template for creating a custom toolbar button for metatell.
+This is a template for creating an additional toolbar button for metatell.
 
 ## Pre-requisites
 
@@ -73,8 +73,8 @@ You can publish the plugin from metatell-admin in future.
 ### Restrictions
 
 - Do not use default export. export Component as named export
-- Component name should be `CustomToolbarButton`
-- component should be placed in `src/CustomToolbarButton` directory
+- Component name should be `AdditionalToolbarButton`
+- component should be placed in `src/AdditionalToolbarButton` directory
   - You can change the directory to update federation config in `/configs/federationConfig.js`
 
 ### Styling

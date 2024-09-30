@@ -16,10 +16,10 @@ git clone git@github.com:urth-inc/metatell_plugin_template.git
 
 2. Copy the selected plugin template to your desired location
 
-If you select the `CustomToolbarButton` plugin template, you can copy it to your desired location by running the command below.
+If you select the `AdditionalToolbarButton` plugin template, you can copy it to your desired location by running the command below.
 
 ```bash
-cp -r metatell_plugin_template/CustomToolbarButton /path/to/your/desired/location
+cp -r metatell_plugin_template/AdditionalToolbarButton /path/to/your/desired/location
 ```
 
 3. Initialize the git repository
@@ -37,11 +37,11 @@ Each plugin template has its own README file that explains how to develop the pl
 
 ## List of plugin templates
 
+- [AdditionalToolbarButton](./AdditionalToolbarButton): This plugin template shows how to create an additional toolbar button.
 - [CustomOverlay](./CustomOverlay): This plugin template shows how to create a custom overlay.
 - [CustomEntryPanel](./CustomEntryPanel): This plugin template shows how to create a custom entry panel.
 - [CustomProfileModal](./CustomProfileModal): This plugin template shows how to create a custom profile modal.
 - [CustomLeaveButton](./CustomLeaveButton): This plugin template shows how to create a custom leave button.
 - [CustomChatButton](./CustomChatButton): This plugin template shows how to create a custom chat button and modal.
 - [CustomReactionButton](./CustomReactionButton): This plugin template shows how to create a custom reaction button.
-- [CustomToolbarButton](./CustomToolbarButton): This plugin template shows how to create a custom toolbar button.
 

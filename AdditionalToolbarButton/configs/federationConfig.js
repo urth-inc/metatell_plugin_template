@@ -5,7 +5,7 @@ module.exports = {
   name: process.env.VERSION_ID,
   filename: "remoteEntry.js",
   exposes: {
-    "./CustomToolbarButton": "./src/components/CustomToolbarButton",
+    "./AdditionalToolbarButton": "./src/components/AdditionalToolbarButton",
   },
   shared: {
     react: {
