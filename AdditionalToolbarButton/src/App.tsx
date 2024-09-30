@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomToolbarButton } from "./components/CustomToolbarButton";
+import { AdditionalToolbarButton } from "./components/AdditionalToolbarButton";
 
 import * as styles from "./App.module.scss";
 
@@ -9,7 +9,7 @@ const App: React.FC = () => {
       <h2 className={styles.appHeadingContainer}>
         CustomToolbarButton Component
       </h2>
-      <CustomToolbarButton />
+      <AdditionalToolbarButton />
     </div>
   );
 };
