@@ -1,8 +1,8 @@
-# CustomToolbarButton template
+# AdditionalToolbarButton template
 
 ## Description
 
-This is a template for creating a custom toolbar button for metatell.
+This is a template for creating an additional toolbar button for metatell.
 
 ## Pre-requisites
 
@@ -42,7 +42,7 @@ npm run dev
 
 3. update package.json to add metadata
 
-Update the package.json file to add metadata about the custom toolbar button. The metadata includes the name, description, and icon of the custom toolbar button.
+Update the package.json file to add metadata about the additional toolbar button. The metadata includes the name, description, and icon of the additional toolbar button.
 
 You can update the following fields to the package.json file:
 
@@ -50,7 +50,7 @@ You can update the following fields to the package.json file:
 {
   "name": "my-cool-toolbar-button",
   "version": "0.0.1",
-  "description": "A custom toolbar button"
+  "description": "An additional toolbar button"
 }
 ```
 
@@ -73,8 +73,8 @@ You can publish the plugin from metatell-admin in future.
 ### Restrictions
 
 - Do not use default export. export Component as named export
-- Component name should be `CustomToolbarButton`
-- component should be placed in `src/CustomToolbarButton` directory
+- Component name should be `AdditionalToolbarButton`
+- component should be placed in `src/AdditionalToolbarButton` directory
   - You can change the directory to update federation config in `/configs/federationConfig.js`
 
 ### Styling

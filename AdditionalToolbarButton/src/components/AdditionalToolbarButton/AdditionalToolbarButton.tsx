@@ -31,7 +31,7 @@ const IframeModalToolbarButton = (props: IframeModalToolbarButtonProps) => {
   );
 };
 
-const CustomToolbarButton = () => {
+export const AdditionalToolbarButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -49,5 +49,3 @@ const CustomToolbarButton = () => {
     </div>
   );
 };
-
-export { CustomToolbarButton };
