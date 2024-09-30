@@ -1,6 +1,6 @@
 {
-  "name": "custom-profile-panel",
-  "description": "A template for creating custom ProfilePanel for metatell",
+  "name": "custom-profile-modal",
+  "description": "A template for creating CustomProfileModal for metatell",
   "version": "0.0.0",
   "scripts": {
     "start": "webpack --watch --mode development --config webpack.config.js",
