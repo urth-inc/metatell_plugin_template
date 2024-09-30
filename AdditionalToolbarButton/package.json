@@ -1,6 +1,6 @@
 {
-  "name": "custom-toolbar-button-template",
-  "description": "A template for creating custom toolbar buttons for metatell",
+  "name": "additional-toolbar-button-template",
+  "description": "A template for creating additional toolbar buttons for metatell",
   "version": "0.0.0",
   "scripts": {
     "start": "webpack --watch --mode development --config webpack.config.js",

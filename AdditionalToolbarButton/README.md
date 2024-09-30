@@ -42,7 +42,7 @@ npm run dev
 
 3. update package.json to add metadata
 
-Update the package.json file to add metadata about the custom toolbar button. The metadata includes the name, description, and icon of the custom toolbar button.
+Update the package.json file to add metadata about the additional toolbar button. The metadata includes the name, description, and icon of the additional toolbar button.
 
 You can update the following fields to the package.json file:
 
@@ -50,7 +50,7 @@ You can update the following fields to the package.json file:
 {
   "name": "my-cool-toolbar-button",
   "version": "0.0.1",
-  "description": "A custom toolbar button"
+  "description": "An additional toolbar button"
 }
 ```
 
