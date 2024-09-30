@@ -8,7 +8,7 @@ const metadata = {
   name,
   version,
   description,
-  type: "CustomToolbarButton",
+  type: "AdditionalToolbarButton",
   versionId,
 };
 const jsonData = JSON.stringify(metadata, null, 2);
