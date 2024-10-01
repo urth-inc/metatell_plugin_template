@@ -1,5 +1,5 @@
 {
-  "name": "additional-toolbar-button-template",
+  "name": "additional-toolbar-buttons-template",
   "description": "A template for creating additional toolbar buttons for metatell",
   "version": "0.0.0",
   "scripts": {
@@ -21,7 +21,7 @@
     "@babel/preset-env": "^7.24.8",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
-    "@module-federation/enhanced": "^0.3.1",
+    "@module-federation/enhanced": "^0.6.7",
     "@types/react": "^16.14.60",
     "@types/react-dom": "^16.9.24",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
