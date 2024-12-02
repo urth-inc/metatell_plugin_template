@@ -2,11 +2,11 @@
 
 ## Description
 
-This is a template for creating an custom NearestUserProfile for `metatell`.
+This template is for creating a custom NearestUserProfile for Metatell.
 
-NearestUserProfile feature that shows the nearest user profile based on the user's location.
+The NearestUserProfile feature displays the closest user profile based on the user's location.
 
-Default NearestUserProfile looks like this:
+The default NearestUserProfile looks like this:
 
 ![Default NearestUserProfile](./images/default-nearest-user-profile.png)
 
