@@ -1,0 +1,19 @@
+.menu-button-container {
+  position: absolute;
+  top: 172px;
+  left: 8px;
+  border-radius: 50%;
+  background-color: black;
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+  border: none;
+
+  svg {
+    fill: white;
+  }
+}
+
+.hidden {
+  display: none;
+}
