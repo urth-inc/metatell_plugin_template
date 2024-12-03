@@ -8,7 +8,7 @@ import sampleImage from "./assets/penguin.png";
 import type { User } from "./types/user";
 
 const sampleUser: User = {
-  userId: "hoge",
+  sessionId: "dummy-session-id",
   displayName: "John Doe",
   biography: "I am a software engineer.",
   avatarThumbnailUrl: sampleImage,
