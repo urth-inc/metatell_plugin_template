@@ -3,11 +3,14 @@
   top: 172px;
   left: 8px;
   border-radius: 50%;
-  background-color: black;
+  background-color: gold;
   height: 48px;
   width: 48px;
   cursor: pointer;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   svg {
     fill: white;

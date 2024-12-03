@@ -8,6 +8,7 @@ const ModuleFederationPlugin =
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const federationConfig = require("./configs/federationConfig");
 
+console.log(`app Name is: ${process.env.VERSION_ID}`);
 module.exports = {
   entry: path.resolve(__dirname, "./src/index"),
   output: {
