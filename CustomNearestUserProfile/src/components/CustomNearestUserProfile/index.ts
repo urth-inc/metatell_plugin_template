@@ -1,0 +1,1 @@
+export { CustomNearestUserProfile } from "./CustomNearestUserProfile";

@@ -43,5 +43,5 @@ Each plugin template has its own README file that explains how to develop the pl
 - [CustomProfileModal](./CustomProfileModal): This plugin template shows how to create a custom profile modal.
 - [CustomLeaveButton](./CustomLeaveButton): This plugin template shows how to create a custom leave button.
 - [CustomChatButton](./CustomChatButton): This plugin template shows how to create a custom chat button and modal.
-- [CustomReactionButton](./CustomReactionButton): This plugin template shows how to create a custom reaction button.
+- [CustomNearestUserProfile](./CustomNearestUserProfile): This plugin template shows how to create a custom NearestUserProfile.
 

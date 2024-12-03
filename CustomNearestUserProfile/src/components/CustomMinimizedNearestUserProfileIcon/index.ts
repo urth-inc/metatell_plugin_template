@@ -1,0 +1,1 @@
+export { CustomMinimizedNearestUserProfileIcon } from "./CustomMinimizedNearestUserProfileIcon";
