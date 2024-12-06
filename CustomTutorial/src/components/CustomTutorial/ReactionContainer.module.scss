@@ -2,6 +2,15 @@
   margin-right: 8px;
 }
 
+:local(.reaction-icon) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
 :local(.reaction-icon-text) {
   margin-top: 10px;
   font-size: 14px;

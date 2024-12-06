@@ -1,10 +1,9 @@
 import React from "react";
 
-// import { ReactComponent as ReactionIcon } from "../../icons/Reaction.svg";
-
 import * as styles from "./ReactionContainer.module.scss";
 import * as commonStyles from "./common.module.scss";
 import { useReactionTutorial } from "./useReactionTutorial";
+import { ReactionIcon } from "./icons/ReactionIcon";
 
 type Props = {
   skipTutorial: () => void;
@@ -13,7 +12,6 @@ type Props = {
   run: boolean;
   setStepIndex: React.Dispatch<React.SetStateAction<number>>;
   setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
-  setHideArrow: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const ReactionContainer: React.FC<Props> = ({
@@ -23,7 +21,6 @@ export const ReactionContainer: React.FC<Props> = ({
   run,
   setStepIndex,
   setShowEffect,
-  setHideArrow,
 }: Props) => {
   useReactionTutorial({
     run,
@@ -31,19 +28,18 @@ export const ReactionContainer: React.FC<Props> = ({
     index,
     setStepIndex,
     setShowEffect,
-    setHideArrow,
   });
 
   return (
     <div className={commonStyles.tutorialContainer}>
       <div className={styles.reactionIconContainer}>
-        {/* 
-        <ReactionIcon />
-        */}
+        <div className={styles.reactionIcon}>
+          <ReactionIcon />
+        </div>
         <div className={styles.reactionIconText}>React</div>
       </div>
       <div className={commonStyles.messageContainer}>
-        リアクションを押してみよう
+        リアクションボタンを押してみよう
       </div>
       <div
         className={commonStyles.progressContainer}

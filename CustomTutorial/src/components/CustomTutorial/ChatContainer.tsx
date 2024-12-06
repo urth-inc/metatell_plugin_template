@@ -1,6 +1,6 @@
 import React from "react";
 
-// import { ReactComponent as ChatIcon } from "./icons/Chat.svg";
+import { ChatIcon } from "./icons/ChatIcon";
 
 import * as styles from "./ChatContainer.module.scss";
 import * as commonStyles from "./common.module.scss";
@@ -13,7 +13,6 @@ type Props = {
   run: boolean;
   setStepIndex: React.Dispatch<React.SetStateAction<number>>;
   setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
-  setHideArrow: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const ChatContainer: React.FC<Props> = ({
@@ -23,7 +22,6 @@ export const ChatContainer: React.FC<Props> = ({
   run,
   setStepIndex,
   setShowEffect,
-  setHideArrow,
 }: Props) => {
   useChatTutorial({
     index,
@@ -31,15 +29,12 @@ export const ChatContainer: React.FC<Props> = ({
     stepIndex,
     setStepIndex,
     setShowEffect,
-    setHideArrow,
   });
 
   return (
     <div className={commonStyles.tutorialContainer}>
       <div className={styles.chatIconContainer}>
-        {/*
         <ChatIcon />
-        */}
         <div className={styles.chatIconText}>Chat</div>
       </div>
       <div className={commonStyles.messageContainer}>

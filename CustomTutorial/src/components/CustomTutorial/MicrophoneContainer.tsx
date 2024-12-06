@@ -1,7 +1,7 @@
 import React from "react";
 
-// import { ReactComponent as MicrophoneIcon } from "../../icons/Microphone.svg";
-// import { ReactComponent as MicrophoneMutedIcon } from "../../icons/MicrophoneMuted.svg";
+import { MicrophoneIcon } from "./icons/MicrophoneIcon";
+import { MicrophoneMutedIcon } from "./icons/MicrophoneMutedIcon";
 
 import * as styles from "./MicrophoneContainer.module.scss";
 import * as commonStyles from "./common.module.scss";
@@ -14,7 +14,6 @@ type Props = {
   run: boolean;
   setStepIndex: React.Dispatch<React.SetStateAction<number>>;
   setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
-  setHideArrow: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const MicrophoneContainer: React.FC<Props> = ({
@@ -24,7 +23,6 @@ export const MicrophoneContainer: React.FC<Props> = ({
   run,
   setStepIndex,
   setShowEffect,
-  setHideArrow,
 }: Props) => {
   useMicrophoneTutorial({
     index,
@@ -32,16 +30,13 @@ export const MicrophoneContainer: React.FC<Props> = ({
     stepIndex,
     setStepIndex,
     setShowEffect,
-    setHideArrow,
   });
   return (
     <div className={commonStyles.tutorialContainer}>
       <div className={styles.micIconContainer}>
-        {/*
         <MicrophoneMutedIcon />
         <div className={styles.triangle}></div>
         <MicrophoneIcon />
-        */}
       </div>
       <div className={commonStyles.messageContainer}>
         マイクをオンにして近くの人に話しかけてみよう

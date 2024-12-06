@@ -9,7 +9,6 @@ type Props = {
   stepIndex: number;
   run: boolean;
   setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
-  setHideArrow: React.Dispatch<React.SetStateAction<boolean>>;
   setEffectOption: React.Dispatch<React.SetStateAction<"single" | "flow">>;
 };
 
@@ -20,7 +19,6 @@ export const CongratulationsContainer: React.FC<Props> = ({
   stepIndex,
   setEffectOption,
   setShowEffect,
-  setHideArrow,
 }: Props) => {
   useCongratulations({
     index,
@@ -28,7 +26,6 @@ export const CongratulationsContainer: React.FC<Props> = ({
     stepIndex,
     setEffectOption,
     setShowEffect,
-    setHideArrow,
   });
 
   return (

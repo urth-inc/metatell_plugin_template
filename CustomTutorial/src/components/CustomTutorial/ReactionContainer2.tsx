@@ -1,5 +1,7 @@
 import React from "react";
 
+import emoji0 from "../../images/emoji0.png";
+
 import * as commonStyles from "./common.module.scss";
 import { useReactionTutorial2 } from "./useReactionTutorial2";
 
@@ -10,7 +12,6 @@ type Props = {
   stepIndex: number;
   setStepIndex: React.Dispatch<React.SetStateAction<number>>;
   setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
-  setHideArrow: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const ReactionContainer2: React.FC<Props> = ({
@@ -20,7 +21,6 @@ export const ReactionContainer2: React.FC<Props> = ({
   stepIndex,
   setStepIndex,
   setShowEffect,
-  setHideArrow,
 }: Props) => {
   useReactionTutorial2({
     index,
@@ -28,12 +28,16 @@ export const ReactionContainer2: React.FC<Props> = ({
     stepIndex,
     setStepIndex,
     setShowEffect,
-    setHideArrow,
   });
 
   return (
     <div className={commonStyles.tutorialContainer}>
-      <div className={commonStyles.messageContainer}>押してみよう</div>
+      <div className={commonStyles.iconContainer}>
+        <img draggable={false} src={emoji0} alt="emoji0" />
+      </div>
+      <div className={commonStyles.messageContainer}>
+        リアクションアイコンを押してみよう
+      </div>
       <div
         className={commonStyles.progressContainer}
       >{`${(index + 1).toString()}/4`}</div>

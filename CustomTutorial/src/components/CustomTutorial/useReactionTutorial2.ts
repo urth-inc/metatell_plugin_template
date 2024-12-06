@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from "react"
+import { useState, useEffect, useCallback, useRef } from "react";
 
 export const useReactionTutorial2 = ({
   index,
@@ -6,69 +6,70 @@ export const useReactionTutorial2 = ({
   stepIndex,
   setStepIndex,
   setShowEffect,
-  setHideArrow
 }: {
-  index: number
-  run: boolean
-  stepIndex: number
-  setStepIndex: (value: number) => void
-  setShowEffect: (value: boolean) => void
-  setHideArrow: (value: boolean) => void
+  index: number;
+  run: boolean;
+  stepIndex: number;
+  setStepIndex: (value: number) => void;
+  setShowEffect: (value: boolean) => void;
 }) => {
-  const [reactionIcon, setReactionIcon] = useState<HTMLElement | null>(null)
+  const [reactionIcon, setReactionIcon] = useState<HTMLElement | null>(null);
   useEffect(() => {
     if (!run || index !== stepIndex) {
-      return
+      return;
     }
 
-    const element: HTMLElement | null = document.querySelector("[data-mt='ReactionIcon-0']")
-    setReactionIcon(element)
+    const element: HTMLElement | null = document.querySelector(
+      "[data-mt='ReactionIcon-0']",
+    );
+    setReactionIcon(element);
 
     const observer = new MutationObserver(() => {
-      const updatedElement = document.querySelector("[data-mt='ReactionIcon-0']")
-      setReactionIcon(updatedElement)
-    })
+      const updatedElement = document.querySelector(
+        "[data-mt='ReactionIcon-0']",
+      );
+      setReactionIcon(updatedElement);
+    });
 
     observer.observe(document.body, {
       childList: true,
-      subtree: true
-    })
+      subtree: true,
+    });
 
     return () => {
-      observer.disconnect()
-    }
-  }, [run, stepIndex, index])
+      observer.disconnect();
+    };
+  }, [run, stepIndex, index]);
 
-  const isProcessingRef = useRef(false)
-  const handleReactionIconClickRef = useRef<() => void>(() => {})
+  const isProcessingRef = useRef(false);
+  const handleReactionIconClickRef = useRef<() => void>(() => {});
   handleReactionIconClickRef.current = useCallback(() => {
     if (!run || index !== stepIndex || isProcessingRef.current) {
-      return
+      return;
     }
 
-    isProcessingRef.current = true
-    setHideArrow(false)
-    setShowEffect(true)
-    setStepIndex(index + 1)
+    isProcessingRef.current = true;
+    setShowEffect(true);
+    setStepIndex(index + 1);
     setTimeout(() => {
-      isProcessingRef.current = false
-      setShowEffect(false)
-    }, 2000)
-  }, [run, stepIndex, setStepIndex, setShowEffect, setHideArrow, index])
+      isProcessingRef.current = false;
+      setShowEffect(false);
+    }, 2000);
+  }, [run, stepIndex, setStepIndex, setShowEffect, index]);
 
   useEffect(() => {
     const handleClick = () => {
-      handleReactionIconClickRef.current()
-    }
+      handleReactionIconClickRef.current();
+    };
 
     if (reactionIcon) {
-      reactionIcon.addEventListener("click", handleClick)
+      reactionIcon.addEventListener("click", handleClick);
     }
 
     return () => {
       if (reactionIcon) {
-        reactionIcon.addEventListener("click", handleClick)
+        reactionIcon.removeEventListener("click", handleClick);
       }
-    }
-  }, [reactionIcon])
-}
+    };
+  }, [reactionIcon]);
+};

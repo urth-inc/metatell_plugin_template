@@ -11,20 +11,17 @@ import { ReactionContainer2 } from "./ReactionContainer2";
 export const CustomTutorial: React.FC = () => {
   const [run, setRun] = useState(true);
   const [stepIndex, setStepIndex] = useState(0);
-  const [hideArrow, setHideArrow] = useState(false);
   const [showEffect, setShowEffect] = useState(false);
   const [effectOption, setEffectOption] = useState<"single" | "flow">("single");
 
   useEffect(() => {
     window.addEventListener("initTutorial", () => {
-      setHideArrow(false);
       setStepIndex(0);
       setRun(true);
     });
 
     return () => {
       window.removeEventListener("initTutorial", () => {
-        setHideArrow(false);
         setStepIndex(0);
         setRun(true);
       });
@@ -37,7 +34,7 @@ export const CustomTutorial: React.FC = () => {
 
   const steps = [
     {
-      target: "[data-mt='ReactionPopoverContainer']",
+      target: "[data-mt='Toolbar']",
       content: (
         <ReactionContainer
           index={0}
@@ -46,13 +43,12 @@ export const CustomTutorial: React.FC = () => {
           run={run}
           setStepIndex={setStepIndex}
           setShowEffect={setShowEffect}
-          setHideArrow={setHideArrow}
         />
       ),
       disableBeacon: true,
     },
     {
-      target: "[data-mt='ReactionIcon-0']",
+      target: "[data-mt='Toolbar']",
       content: (
         <ReactionContainer2
           index={1}
@@ -61,14 +57,13 @@ export const CustomTutorial: React.FC = () => {
           run={run}
           setStepIndex={setStepIndex}
           setShowEffect={setShowEffect}
-          setHideArrow={setHideArrow}
         />
       ),
       disableBeacon: true,
       placement: "left-start",
     },
     {
-      target: "[data-mt='ToolbarMicButton']",
+      target: "[data-mt='Toolbar']",
       content: (
         <MicrophoneContainer
           index={2}
@@ -77,13 +72,12 @@ export const CustomTutorial: React.FC = () => {
           run={run}
           setStepIndex={setStepIndex}
           setShowEffect={setShowEffect}
-          setHideArrow={setHideArrow}
         />
       ),
       disableBeacon: true,
     },
     {
-      target: "[data-mt='ChatToolbarButtonContainer']",
+      target: "[data-mt='Toolbar']",
       content: (
         <ChatContainer
           index={3}
@@ -92,7 +86,6 @@ export const CustomTutorial: React.FC = () => {
           run={run}
           setStepIndex={setStepIndex}
           setShowEffect={setShowEffect}
-          setHideArrow={setHideArrow}
         />
       ),
       disableBeacon: true,
@@ -106,7 +99,6 @@ export const CustomTutorial: React.FC = () => {
           stepIndex={stepIndex}
           run={run}
           setShowEffect={setShowEffect}
-          setHideArrow={setHideArrow}
           setEffectOption={setEffectOption}
         />
       ),
@@ -119,7 +111,7 @@ export const CustomTutorial: React.FC = () => {
       <Joyride
         run={run}
         hideCloseButton
-        floaterProps={{ hideArrow }}
+        floaterProps={{ hideArrow: true }}
         styles={{
           options: {
             backgroundColor: "#0BA0E8",
