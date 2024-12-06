@@ -60,7 +60,6 @@ export const CustomTutorial: React.FC = () => {
         />
       ),
       disableBeacon: true,
-      placement: "left-start",
     },
     {
       target: "[data-mt='Toolbar']",
