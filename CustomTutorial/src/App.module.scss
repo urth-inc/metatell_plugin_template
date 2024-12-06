@@ -34,3 +34,35 @@
     }
   }
 }
+
+.start-tutorial-button-container {
+  margin-top: 32px;
+
+  .start-tutorial-button {
+    padding: 8px 16px;
+    cursor: pointer;
+    background: #c0c0c0;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #e0e0e0;
+    }
+  }
+
+  button {
+    color: white;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: color 0.15s;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: none;
+  }
+}
