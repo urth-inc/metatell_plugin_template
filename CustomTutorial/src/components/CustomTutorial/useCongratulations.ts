@@ -23,6 +23,7 @@ export const useCongratulations = ({
     isProcessingRef.current = true;
     setEffectOption("flow");
     setShowEffect(true);
+    window.localStorage.setItem("done_tutorial", "true");
     setTimeout(() => {
       isProcessingRef.current = false;
       setShowEffect(false);

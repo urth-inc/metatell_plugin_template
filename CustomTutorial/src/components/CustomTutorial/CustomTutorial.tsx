@@ -9,7 +9,8 @@ import { ReactionContainer } from "./ReactionContainer";
 import { ReactionContainer2 } from "./ReactionContainer2";
 
 export const CustomTutorial: React.FC = () => {
-  const [run, setRun] = useState(true);
+  const isFinished = window.localStorage.getItem("done_tutorial") === "true";
+  const [run, setRun] = useState(!isFinished);
   const [stepIndex, setStepIndex] = useState(0);
   const [showEffect, setShowEffect] = useState(false);
   const [effectOption, setEffectOption] = useState<"single" | "flow">("single");
@@ -30,6 +31,7 @@ export const CustomTutorial: React.FC = () => {
 
   const skipTutorial = () => {
     setRun(false);
+    window.localStorage.setItem("done_tutorial", "true");
   };
 
   const steps = [
