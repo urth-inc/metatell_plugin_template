@@ -12,6 +12,7 @@ type Props = {
   run: boolean;
   setStepIndex: React.Dispatch<React.SetStateAction<number>>;
   setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
+  setRun: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const ReactionContainer: React.FC<Props> = ({
@@ -19,11 +20,13 @@ export const ReactionContainer: React.FC<Props> = ({
   stepIndex,
   index,
   run,
+  setRun,
   setStepIndex,
   setShowEffect,
 }: Props) => {
   useReactionTutorial({
     run,
+    setRun,
     stepIndex,
     index,
     setStepIndex,

@@ -11,6 +11,7 @@ type Props = {
   skipTutorial: () => void;
   stepIndex: number;
   run: boolean;
+  setRun: React.Dispatch<React.SetStateAction<boolean>>;
   setStepIndex: React.Dispatch<React.SetStateAction<number>>;
   setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -20,12 +21,14 @@ export const ChatContainer: React.FC<Props> = ({
   skipTutorial,
   stepIndex,
   run,
+  setRun,
   setStepIndex,
   setShowEffect,
 }: Props) => {
   useChatTutorial({
     index,
     run,
+    setRun,
     stepIndex,
     setStepIndex,
     setShowEffect,

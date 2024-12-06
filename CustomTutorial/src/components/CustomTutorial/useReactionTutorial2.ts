@@ -3,15 +3,17 @@ import { useState, useEffect, useCallback, useRef } from "react";
 export const useReactionTutorial2 = ({
   index,
   run,
+  setRun,
   stepIndex,
   setStepIndex,
   setShowEffect,
 }: {
   index: number;
   run: boolean;
+  setRun: React.Dispatch<React.SetStateAction<boolean>>;
   stepIndex: number;
-  setStepIndex: (value: number) => void;
-  setShowEffect: (value: boolean) => void;
+  setStepIndex: React.Dispatch<React.SetStateAction<number>>;
+  setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const [reactionIcon, setReactionIcon] = useState<HTMLElement | null>(null);
   useEffect(() => {
@@ -51,9 +53,11 @@ export const useReactionTutorial2 = ({
     isProcessingRef.current = true;
     setShowEffect(true);
     setStepIndex(index + 1);
+    setRun(false);
     setTimeout(() => {
       isProcessingRef.current = false;
       setShowEffect(false);
+      setRun(true);
     }, 2000);
   }, [run, stepIndex, setStepIndex, setShowEffect, index]);
 

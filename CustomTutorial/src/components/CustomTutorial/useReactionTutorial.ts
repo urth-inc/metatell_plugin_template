@@ -6,12 +6,14 @@ export const useReactionTutorial = ({
   stepIndex,
   setStepIndex,
   setShowEffect,
+  setRun,
 }: {
   run: boolean;
   index: number;
   stepIndex: number;
-  setStepIndex: (value: number) => void;
-  setShowEffect: (value: boolean) => void;
+  setStepIndex: React.Dispatch<React.SetStateAction<number>>;
+  setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
+  setRun: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const reactionButton: HTMLElement | null = document.querySelector(
     "[data-mt='ReactionPopoverContainer']",
@@ -26,11 +28,13 @@ export const useReactionTutorial = ({
 
     isProcessingRef.current = true;
     setShowEffect(true);
-    setStepIndex(index + 1);
+    setRun(false);
 
     setTimeout(() => {
       isProcessingRef.current = false;
       setShowEffect(false);
+      setStepIndex(index + 1);
+      setRun(true);
     }, 2000);
   }, [run, stepIndex, setStepIndex, setShowEffect, index]);
 

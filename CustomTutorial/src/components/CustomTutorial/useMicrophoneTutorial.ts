@@ -3,15 +3,17 @@ import { useEffect, useRef, useCallback } from "react";
 export const useMicrophoneTutorial = ({
   index,
   run,
+  setRun,
   stepIndex,
   setStepIndex,
   setShowEffect,
 }: {
   index: number;
   run: boolean;
+  setRun: React.Dispatch<React.SetStateAction<boolean>>;
   stepIndex: number;
-  setStepIndex: (value: number) => void;
-  setShowEffect: (value: boolean) => void;
+  setStepIndex: React.Dispatch<React.SetStateAction<number>>;
+  setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const microphoneButton: HTMLElement | null = document.querySelector(
     "[data-mt='ToolbarMicButton']",
@@ -28,9 +30,11 @@ export const useMicrophoneTutorial = ({
     isProcessingRef.current = true;
     setShowEffect(true);
     setStepIndex(index + 1);
+    setRun(false);
     setTimeout(() => {
       isProcessingRef.current = false;
       setShowEffect(false);
+      setRun(true);
     }, 2000);
   }, [run, stepIndex, setStepIndex, setShowEffect, index]);
 

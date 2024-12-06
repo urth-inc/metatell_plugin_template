@@ -12,6 +12,7 @@ type Props = {
   skipTutorial: () => void;
   stepIndex: number;
   run: boolean;
+  setRun: React.Dispatch<React.SetStateAction<boolean>>;
   setStepIndex: React.Dispatch<React.SetStateAction<number>>;
   setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -21,12 +22,14 @@ export const MicrophoneContainer: React.FC<Props> = ({
   skipTutorial,
   stepIndex,
   run,
+  setRun,
   setStepIndex,
   setShowEffect,
 }: Props) => {
   useMicrophoneTutorial({
     index,
     run,
+    setRun,
     stepIndex,
     setStepIndex,
     setShowEffect,

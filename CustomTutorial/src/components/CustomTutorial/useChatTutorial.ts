@@ -3,15 +3,17 @@ import { useEffect, useRef, useCallback } from "react";
 export const useChatTutorial = ({
   index,
   run,
+  setRun,
   stepIndex,
   setStepIndex,
   setShowEffect,
 }: {
   index: number;
   run: boolean;
+  setRun: React.Dispatch<React.SetStateAction<boolean>>;
   stepIndex: number;
-  setStepIndex: (value: number) => void;
-  setShowEffect: (value: boolean) => void;
+  setStepIndex: React.Dispatch<React.SetStateAction<number>>;
+  setShowEffect: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const chatButton: HTMLElement | null = document.querySelector(
     "[data-mt='ChatToolbarButtonContainer']",
@@ -26,10 +28,12 @@ export const useChatTutorial = ({
 
     isProcessingRef.current = true;
     setShowEffect(true);
+    setRun(false);
     setTimeout(() => {
       setShowEffect(false);
       isProcessingRef.current = false;
       setStepIndex(index + 1);
+      setRun(true);
     }, 2000);
   }, [run, stepIndex, setStepIndex, setShowEffect, index]);
 

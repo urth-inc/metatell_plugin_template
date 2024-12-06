@@ -41,6 +41,7 @@ export const CustomTutorial: React.FC = () => {
           skipTutorial={skipTutorial}
           stepIndex={stepIndex}
           run={run}
+          setRun={setRun}
           setStepIndex={setStepIndex}
           setShowEffect={setShowEffect}
         />
@@ -55,6 +56,7 @@ export const CustomTutorial: React.FC = () => {
           skipTutorial={skipTutorial}
           stepIndex={stepIndex}
           run={run}
+          setRun={setRun}
           setStepIndex={setStepIndex}
           setShowEffect={setShowEffect}
         />
@@ -69,6 +71,7 @@ export const CustomTutorial: React.FC = () => {
           skipTutorial={skipTutorial}
           stepIndex={stepIndex}
           run={run}
+          setRun={setRun}
           setStepIndex={setStepIndex}
           setShowEffect={setShowEffect}
         />
@@ -83,6 +86,7 @@ export const CustomTutorial: React.FC = () => {
           skipTutorial={skipTutorial}
           stepIndex={stepIndex}
           run={run}
+          setRun={setRun}
           setStepIndex={setStepIndex}
           setShowEffect={setShowEffect}
         />
@@ -121,7 +125,6 @@ export const CustomTutorial: React.FC = () => {
             display: "none",
           },
         }}
-        /* @ts-expect-error - type missmatch */
         steps={steps}
         stepIndex={stepIndex}
         continuous={true}
