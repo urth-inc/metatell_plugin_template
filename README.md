@@ -44,4 +44,5 @@ Each plugin template has its own README file that explains how to develop the pl
 - [CustomLeaveButton](./CustomLeaveButton): This plugin template shows how to create a custom leave button.
 - [CustomChatButton](./CustomChatButton): This plugin template shows how to create a custom chat button and modal.
 - [CustomNearestUserProfile](./CustomNearestUserProfile): This plugin template shows how to create a custom NearestUserProfile.
+- [CustomTutorial](./CustomTutorial): This plugin template shows how to create a custom tutorial.
 
