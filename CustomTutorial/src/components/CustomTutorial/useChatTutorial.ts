@@ -26,10 +26,10 @@ export const useChatTutorial = ({
 
     isProcessingRef.current = true;
     setShowEffect(true);
-    setStepIndex(index + 1);
     setTimeout(() => {
       setShowEffect(false);
       isProcessingRef.current = false;
+      setStepIndex(index + 1);
     }, 2000);
   }, [run, stepIndex, setStepIndex, setShowEffect, index]);
 
