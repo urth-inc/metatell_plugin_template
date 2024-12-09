@@ -20,7 +20,7 @@ const App: React.FC = () => {
 
   return (
     <div className={styles.appContainer}>
-      <h2 className={styles.appHeadingContainer}>CustomTutorial Component</h2>
+      <h2 className={styles.appHeadingContainer}>CustomTutorial Demo</h2>
       <CustomTutorial {...tutorialProps} />
       <div data-mt="ReactionIcon-0" className={styles.dummyIconContainer}>
         ReactionIcon

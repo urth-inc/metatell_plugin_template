@@ -99,8 +99,8 @@ export const CustomTutorial: React.FC<Props> = ({
         floaterProps={{ hideArrow: true }}
         styles={{
           options: {
-            backgroundColor: "#0BA0E8",
-            arrowColor: "#0BA0E8",
+            backgroundColor: "#121212",
+            arrowColor: "#FFF",
             textColor: "white",
           },
           buttonNext: {
