@@ -3,6 +3,16 @@ import { CustomTutorial } from "./components/CustomTutorial";
 
 import * as styles from "./App.module.scss";
 
+const tutorialProps = {
+  showMicrophone: true,
+  showMegaphone: true,
+  showVideo: true,
+  showShare: true,
+  showPlace: true,
+  showReaction: true,
+  showChat: true,
+};
+
 const App: React.FC = () => {
   const handleClick = () => {
     window.dispatchEvent(new CustomEvent("initTutorial"));
@@ -11,7 +21,7 @@ const App: React.FC = () => {
   return (
     <div className={styles.appContainer}>
       <h2 className={styles.appHeadingContainer}>CustomTutorial Component</h2>
-      <CustomTutorial />
+      <CustomTutorial {...tutorialProps} />
       <div data-mt="ReactionIcon-0" className={styles.dummyIconContainer}>
         ReactionIcon
       </div>

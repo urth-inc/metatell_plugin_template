@@ -8,6 +8,7 @@ import { useChatTutorial } from "./useChatTutorial";
 
 type Props = {
   index: number;
+  numberOfSteps: number;
   skipTutorial: () => void;
   stepIndex: number;
   run: boolean;
@@ -18,6 +19,7 @@ type Props = {
 
 export const ChatContainer: React.FC<Props> = ({
   index,
+  numberOfSteps,
   skipTutorial,
   stepIndex,
   run,
@@ -43,7 +45,9 @@ export const ChatContainer: React.FC<Props> = ({
       <div className={commonStyles.messageContainer}>
         チャットで空間内の人に挨拶をしてみよう
       </div>
-      <div className={commonStyles.progressContainer}>4/4</div>
+      <div
+        className={commonStyles.progressContainer}
+      >{`${(index + 1).toString()}/${numberOfSteps.toString()}`}</div>
       <button onClick={skipTutorial} className={commonStyles.skipButton}>
         スキップ
       </button>

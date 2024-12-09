@@ -8,7 +8,21 @@ import { ParticleEffect } from "./ParticleEffect";
 import { ReactionContainer } from "./ReactionContainer";
 import { ReactionContainer2 } from "./ReactionContainer2";
 
-export const CustomTutorial: React.FC = () => {
+type Props = {
+  showMicrophone: boolean;
+  showMegaphone: boolean;
+  showVideo: boolean;
+  showShare: boolean;
+  showPlace: boolean;
+  showReaction: boolean;
+  showChat: boolean;
+};
+
+export const CustomTutorial: React.FC<Props> = ({
+  showReaction,
+  showMicrophone,
+  showChat,
+}) => {
   const isFinished = window.localStorage.getItem("done_tutorial") === "true";
   const [run, setRun] = useState(!isFinished);
   const [stepIndex, setStepIndex] = useState(0);
@@ -33,88 +47,54 @@ export const CustomTutorial: React.FC = () => {
     setRun(false);
     window.localStorage.setItem("done_tutorial", "true");
   };
+  const createStep = (
+    // eslint-disable-next-line
+    Component: React.FC<any>,
+    index: number,
+    additionalProps = {},
+    numberOfSteps: number,
+  ) => ({
+    target: "[data-mt='Toolbar']",
+    content: (
+      <Component
+        index={index}
+        numberOfSteps={numberOfSteps}
+        skipTutorial={skipTutorial}
+        stepIndex={stepIndex}
+        run={run}
+        setRun={setRun}
+        setStepIndex={setStepIndex}
+        setShowEffect={setShowEffect}
+        {...additionalProps}
+      />
+    ),
+    disableBeacon: true,
+  });
 
-  const steps = [
+  const stepsConfig = [
+    { condition: showReaction, Component: ReactionContainer },
+    { condition: showReaction, Component: ReactionContainer2 },
+    { condition: showMicrophone, Component: MicrophoneContainer },
+    { condition: showChat, Component: ChatContainer },
     {
-      target: "[data-mt='Toolbar']",
-      content: (
-        <ReactionContainer
-          index={0}
-          skipTutorial={skipTutorial}
-          stepIndex={stepIndex}
-          run={run}
-          setRun={setRun}
-          setStepIndex={setStepIndex}
-          setShowEffect={setShowEffect}
-        />
-      ),
-      disableBeacon: true,
-    },
-    {
-      target: "[data-mt='Toolbar']",
-      content: (
-        <ReactionContainer2
-          index={1}
-          skipTutorial={skipTutorial}
-          stepIndex={stepIndex}
-          run={run}
-          setRun={setRun}
-          setStepIndex={setStepIndex}
-          setShowEffect={setShowEffect}
-        />
-      ),
-      disableBeacon: true,
-    },
-    {
-      target: "[data-mt='Toolbar']",
-      content: (
-        <MicrophoneContainer
-          index={2}
-          skipTutorial={skipTutorial}
-          stepIndex={stepIndex}
-          run={run}
-          setRun={setRun}
-          setStepIndex={setStepIndex}
-          setShowEffect={setShowEffect}
-        />
-      ),
-      disableBeacon: true,
-    },
-    {
-      target: "[data-mt='Toolbar']",
-      content: (
-        <ChatContainer
-          index={3}
-          skipTutorial={skipTutorial}
-          stepIndex={stepIndex}
-          run={run}
-          setRun={setRun}
-          setStepIndex={setStepIndex}
-          setShowEffect={setShowEffect}
-        />
-      ),
-      disableBeacon: true,
-    },
-    {
-      target: "[data-mt='Toolbar']",
-      content: (
-        <CongratulationsContainer
-          index={4}
-          doneTutorial={skipTutorial}
-          stepIndex={stepIndex}
-          run={run}
-          setShowEffect={setShowEffect}
-          setEffectOption={setEffectOption}
-        />
-      ),
-      disableBeacon: true,
+      condition: true,
+      Component: CongratulationsContainer,
+      additionalProps: { doneTutorial: skipTutorial, setEffectOption },
     },
   ];
+
+  const numberOfSteps: number =
+    stepsConfig.filter(({ condition }) => condition).length - 1;
+  const steps = stepsConfig
+    .filter(({ condition }) => condition)
+    .map(({ Component, additionalProps }, index) =>
+      createStep(Component, index, additionalProps, numberOfSteps),
+    );
 
   return (
     <div data-mt="TutorialContainer">
       <Joyride
-        run={run}
+        run={run && numberOfSteps > 0}
         hideCloseButton
         floaterProps={{ hideArrow: true }}
         styles={{

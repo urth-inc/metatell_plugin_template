@@ -9,6 +9,7 @@ import { useMicrophoneTutorial } from "./useMicrophoneTutorial";
 
 type Props = {
   index: number;
+  numberOfSteps: number;
   skipTutorial: () => void;
   stepIndex: number;
   run: boolean;
@@ -19,6 +20,7 @@ type Props = {
 
 export const MicrophoneContainer: React.FC<Props> = ({
   index,
+  numberOfSteps,
   skipTutorial,
   stepIndex,
   run,
@@ -44,7 +46,9 @@ export const MicrophoneContainer: React.FC<Props> = ({
       <div className={commonStyles.messageContainer}>
         マイクをオンにして近くの人に話しかけてみよう
       </div>
-      <div className={commonStyles.progressContainer}>3/4</div>
+      <div
+        className={commonStyles.progressContainer}
+      >{`${(index + 1).toString()}/${numberOfSteps}`}</div>
       <button onClick={skipTutorial} className={commonStyles.skipButton}>
         スキップ
       </button>

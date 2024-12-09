@@ -8,6 +8,7 @@ import { ReactionIcon } from "./icons/ReactionIcon";
 type Props = {
   skipTutorial: () => void;
   index: number;
+  numberOfSteps: number;
   stepIndex: number;
   run: boolean;
   setStepIndex: React.Dispatch<React.SetStateAction<number>>;
@@ -19,6 +20,7 @@ export const ReactionContainer: React.FC<Props> = ({
   skipTutorial,
   stepIndex,
   index,
+  numberOfSteps,
   run,
   setRun,
   setStepIndex,
@@ -46,7 +48,7 @@ export const ReactionContainer: React.FC<Props> = ({
       </div>
       <div
         className={commonStyles.progressContainer}
-      >{`${(stepIndex + 1).toString()}/4`}</div>
+      >{`${(stepIndex + 1).toString()}/${numberOfSteps.toString()}`}</div>
       <button onClick={skipTutorial} className={commonStyles.skipButton}>
         スキップ
       </button>

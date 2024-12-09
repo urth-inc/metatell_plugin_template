@@ -7,10 +7,19 @@ This template is for creating a custom tutorial for the `Metatell`.
 ## Interface
 
 ```tsx
-interface CustomTutorialProps {}
+interface CustomTutorialProps {
+  showMicrophone: boolean
+  showMegaphone: boolean
+  showVideo: boolean
+  showShare: boolean
+  showPlace: boolean
+  showReaction: boolean
+  showChat: boolean
+}
 ```
 
-CustomTutorial has no props.
+These props are used to determine which components should be displayed in the application.
+You can use these props to conditionally render the components.
 
 ## Pre-requisites
 

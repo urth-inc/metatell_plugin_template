@@ -7,6 +7,7 @@ import { useReactionTutorial2 } from "./useReactionTutorial2";
 
 type Props = {
   index: number;
+  numberOfSteps: number;
   skipTutorial: () => void;
   run: boolean;
   setRun: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,6 +18,7 @@ type Props = {
 
 export const ReactionContainer2: React.FC<Props> = ({
   index,
+  numberOfSteps,
   skipTutorial,
   run,
   setRun,
@@ -43,7 +45,7 @@ export const ReactionContainer2: React.FC<Props> = ({
       </div>
       <div
         className={commonStyles.progressContainer}
-      >{`${(index + 1).toString()}/4`}</div>
+      >{`${(index + 1).toString()}/${numberOfSteps.toString()}`}</div>
       <button onClick={skipTutorial} className={commonStyles.skipButton}>
         スキップ
       </button>
