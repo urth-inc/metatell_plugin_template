@@ -16,5 +16,9 @@ module.exports = {
       singleton: true,
       requiredVersion: dependencies["react-dom"],
     },
+    "react-toastify": {
+      singleton: true,
+      requiredVersion: dependencies["react-toastify"],
+    },
   },
 };
