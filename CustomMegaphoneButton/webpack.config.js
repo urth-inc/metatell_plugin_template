@@ -74,7 +74,7 @@ module.exports = {
       },
       // Global CSS Rule
       {
-        test: /\.css$/,
+        test: /\.(scss|css)$/,
         include: /node_modules/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
