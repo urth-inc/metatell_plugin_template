@@ -35,6 +35,42 @@ git commit -m "Initial commit"
 
 Each plugin template has its own README file that explains how to develop the plugin.
 
+## How to read local plugin from local metatell
+
+We assume that local plugin is running on `http://localhost:3004`.
+
+1. update `src/hub.js` in `metatell_client`. VersionId is written in `.uuid.env` in `metatell_plugin_template`.
+
+```js
+  if (plugins) {
+    // const remotes = plugins.map(plugin => {
+    //   return {
+    //     name: plugin.versionId,
+    //     alias: plugin.id,
+    //     entry: `${process.env.REACT_APP_PUBLIC_R2_BUCKET_URL}/plugins/${plugin.id}/${plugin.versionId}/remoteEntry.js`
+    //   }
+    // })
+    init({
+      remotes: [
+        {
+          name: "app_{versionId (uuid)}",
+          alias: "plugin",
+          entry: "http://localhost:3004/remoteEntry.js"
+        }
+      ]
+    })
+  }
+```
+
+2. Overwrite `mfSrc` props like bellow.
+
+```js
+  mfSrc = "plugin/{pluginType}",
+```
+
+The same type of plugin may not work properly if applied multiple times to the same room.
+In that case, you can un-applied the plugin from `metatell-admin`.
+
 ## List of plugin templates
 
 - [AdditionalToolbarButton](./AdditionalToolbarButton): This plugin template shows how to create an additional toolbar button.
