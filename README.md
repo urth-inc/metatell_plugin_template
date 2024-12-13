@@ -41,6 +41,8 @@ We assume that local plugin is running on `http://localhost:3004`.
 
 1. update `src/hub.js` in `metatell_client`. VersionId is written in `.uuid.env` in `metatell_plugin_template`.
 
+If you run `npm run dev` or `npm run build`, `versionId` will be changed every time.
+
 ```js
   if (plugins) {
     // const remotes = plugins.map(plugin => {
