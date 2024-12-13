@@ -55,8 +55,9 @@ module.exports = {
           presets: ["@babel/preset-react"],
         },
       },
+      // CSS Modules Rule
       {
-        test: /\.(scss|css)$/,
+        test: /\.module\.(scss|css)$/,
         use: [
           { loader: MiniCssExtractPlugin.loader },
           {
@@ -71,6 +72,12 @@ module.exports = {
           },
           "sass-loader",
         ],
+      },
+      // Global CSS Rule
+      {
+        test: /\.(scss|css)$/,
+        include: /node_modules/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
