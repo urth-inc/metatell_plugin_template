@@ -41,3 +41,40 @@
 .is-off {
   color: #ff5b5b;
 }
+
+.megaphone-tooltip-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+  color: white;
+  border: none;
+  width: 100%;
+  max-width: 320px;
+  padding: 8px;
+}
+
+.application-button {
+  background: #7ed320;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.disabled-button {
+  color: grey;
+  cursor: not-allowed;
+  background: #f2f2f2;
+}
+
+.disabled {
+  color: grey;
+  cursor: not-allowed;
+}
