@@ -1,12 +1,16 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 import { CustomMegaphoneButton } from "./components/CustomMegaphoneButton";
 
 import * as styles from "./App.module.scss";
 
 const App: React.FC = () => {
   const [isActiveMegaphone, setIsActiveMegaphone] = React.useState(false);
+  const [canMegaphone, setCanMegaphone] = React.useState(true);
 
-  const canMegaphone = true;
   const unmuteMegaphone = async () => {
     setIsActiveMegaphone(true);
   };
@@ -43,10 +47,41 @@ const App: React.FC = () => {
     approveMegaphoneRequest,
   };
 
+  const handleClickRequestMegaphone = () => {
+    messageDispatch.dispatchEvent(
+      new CustomEvent("message", {
+        detail: {
+          type: "request_megaphone",
+          name: "John Doe",
+          sessionId: "session-456",
+        },
+      }),
+    );
+  };
+
+  const handleToggle = () => {
+    setCanMegaphone(!canMegaphone);
+  };
+
   return (
     <div className={styles.appContainer}>
+      <ToastContainer />
+
       <h2 className={styles.appHeadingContainer}>CustomMegaphoneButton Demo</h2>
       <CustomMegaphoneButton {...props} />
+      <div className={styles.buttonContainer}>
+        <button
+          type="button"
+          className={`${styles.toggleSwitch} ${canMegaphone ? styles.on : styles.off}`}
+          aria-pressed={canMegaphone}
+          onClick={handleToggle}
+        >
+          {canMegaphone ? "ON" : "OFF"}
+        </button>
+      </div>
+      <div className={styles.buttonContainer}>
+        <button onClick={handleClickRequestMegaphone}>Request Megaphone</button>
+      </div>
     </div>
   );
 };
