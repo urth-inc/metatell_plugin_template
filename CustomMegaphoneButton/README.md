@@ -31,19 +31,31 @@ The CustomMegaphoneButton should implement the following interface:
 
 ```ts
 interface CustomMegaphoneButtonProps {
-  hasMegaphone: boolean;
   canMegaphone: boolean;
+  temporalMegaphone: boolean;
   isActiveMegaphone: boolean;
   muteMegaphone: () => Promise<void>;
   unmuteMegaphone: () => Promise<void>;
+  mySessionId: string | undefined;
+  messageDispatch: EventTarget;
+  requestMegaphone: () => void;
+  grantMegaphone: () => Promise<void>;
+  revokeMegaphone: () => Promise<void>;
+  approveMegaphoneRequest: (sessionId: string) => void;
 }
 ```
 
-- hasMegaphone: A boolean value that indicates whether the user has a megaphone permission or not.
-- canMegaphone: A boolean value that indicates whether the user can use a megaphone or not. If the user has a megaphone permission, the user can use a megaphone. Some users may not have a megaphone permission but can use a megaphone.
+- canMegaphone: A boolean value that indicates whether the user has a megaphone permission or not.
+- temporalMegaphone: A boolean value that indicates whether the user has a temporal megaphone permission or not.
 - isActiveMegaphone: A boolean value that indicates whether the user is using a megaphone or not.
-- muteMegaphone: A function that mutes the megaphone. If canMegaphone is false, this function should not be called.
-- unmuteMegaphone: A function that unmutes the megaphone. If canMegaphone is false, this function should not be called.
+- muteMegaphone: A function that mutes the megaphone. If canMegaphone is false and temporalMegaphone is false, this function should not be called.
+- unmuteMegaphone: A function that unmutes the megaphone. If canMegaphone is false and temporalMegaphone is false, this function should not be called.
+- mySessionId: A string value that represents the user's session ID.
+- messageDispatch: An EventTarget object that is used to dispatch messages. You can use this object to handle megaphone-related events.
+- requestMegaphone: A function that requests a temporal megaphone permission.
+- grantMegaphone: A function that grants a temporal megaphone permission. If you call this function, you will have a temporal megaphone permission.
+- revokeMegaphone: A function that revokes a temporal megaphone permission. If you call this function, you will lose a temporal megaphone permission.
+- approveMegaphoneRequest: A function that approves a megaphone request.
 
 ## How to develop
 
