@@ -54,7 +54,7 @@ module.exports = {
           presets: ["@babel/preset-react"],
         },
       },
-      // CSS Module Rule
+      // CSS Modules Rule
       {
         test: /\.module\.(scss|css)$/,
         use: [
