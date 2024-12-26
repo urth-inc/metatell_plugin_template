@@ -35,7 +35,7 @@ git commit -m "Initial commit"
 
 Each plugin template has its own README file that explains how to develop the plugin.
 
-## How to read local plugin from local metatell
+## How to load local plugin from local metatell
 
 We assume that local plugin is running on `http://localhost:3004`.
 
